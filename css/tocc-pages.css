@@ -979,36 +979,26 @@
   transform: translate(-50%, -50%);
 }
 
-.tocc-faq__item.tocc-active .tocc-faq__icon::after {
+.tocc-faq__item[open] .tocc-faq__icon::after {
   transform: translate(-50%, -50%) rotate(90deg);
   opacity: 0;
 }
 
-.tocc-faq__item.tocc-active .tocc-faq__question {
+.tocc-faq__item[open] .tocc-faq__question {
   color: var(--tocc-red);
 }
 
 .tocc-faq__answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height var(--tocc-duration-slow) var(--tocc-ease);
-}
-
-.tocc-faq__answer-inner {
   padding-bottom: var(--tocc-space-lg);
 }
 
-.tocc-faq__answer-inner p {
+.tocc-faq__answer p {
   font-size: var(--tocc-text-base);
   color: var(--tocc-gray-600);
 }
 
-.tocc-faq__answer-inner p:last-child {
+.tocc-faq__answer p:last-child {
   margin-bottom: 0;
-}
-
-.tocc-faq__item.tocc-active .tocc-faq__answer {
-  max-height: 600px;
 }
 
 /* Dark section FAQ */
@@ -1020,7 +1010,7 @@
   color: var(--tocc-white);
 }
 
-.tocc-section--dark .tocc-faq__answer-inner p {
+.tocc-section--dark .tocc-faq__answer p {
   color: var(--tocc-gray-400);
 }
 
@@ -1670,16 +1660,22 @@
   transition: all var(--tocc-duration) var(--tocc-ease);
 }
 
+.tocc-lang-card,
+.tocc-lang-card:hover,
+.tocc-lang-card:focus,
+.tocc-lang-card:active {
+  text-decoration: none !important;
+}
+
 .tocc-lang-card:hover {
   border-color: var(--tocc-red);
   box-shadow: var(--tocc-shadow-md);
   transform: translateY(-2px);
-  text-decoration: none;
 }
 
 .tocc-lang-card *,
 .tocc-lang-card:hover * {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .tocc-lang-card__flag {
@@ -2038,5 +2034,5 @@
   .tocc-hero__title { color: var(--tocc-black); font-size: 1.5rem; }
   .tocc-btn { display: none; }
   .tocc-cta-strip { display: none; }
-  .tocc-faq__answer { max-height: none; }
+  .tocc-faq__answer { display: block; }
 }
