@@ -238,45 +238,6 @@
   color: var(--tocc-white);
 }
 
-/* Red section interactive overrides — prevent red on red */
-.tocc-section--red a {
-  color: var(--tocc-white);
-  text-decoration: underline;
-}
-
-.tocc-section--red a:hover {
-  color: var(--tocc-gray-200);
-}
-
-.tocc-section--red .tocc-btn--primary {
-  background-color: var(--tocc-white);
-  color: var(--tocc-red);
-  border-color: var(--tocc-white);
-}
-
-.tocc-section--red .tocc-btn--primary:hover {
-  background-color: var(--tocc-gray-100);
-  box-shadow: var(--tocc-shadow-lg);
-}
-
-.tocc-section--red .tocc-btn--secondary {
-  color: var(--tocc-white);
-  border-color: var(--tocc-white);
-}
-
-.tocc-section--red .tocc-btn--secondary:hover {
-  background-color: var(--tocc-white);
-  color: var(--tocc-red);
-}
-
-.tocc-section--red .tocc-btn--ghost {
-  color: var(--tocc-white);
-}
-
-.tocc-section--red .tocc-btn--ghost:hover {
-  color: var(--tocc-gray-200);
-}
-
 .tocc-section-header {
   text-align: center;
   margin-bottom: var(--tocc-space-2xl);
@@ -676,13 +637,12 @@
 }
 
 .tocc-section--dark .tocc-value-card {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.12);
+  background: var(--tocc-gray-800);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .tocc-section--dark .tocc-value-card:hover {
-  border-color: rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .tocc-section--dark .tocc-value-card h3,
@@ -707,11 +667,8 @@
   font-size: 1.25rem;
 }
 
-.tocc-value-card__icon i { font-size: 1.25rem; }
-.tocc-value-card__icon svg { width: 22px; height: 22px; fill: currentColor; }
-
 .tocc-section--dark .tocc-value-card__icon {
-  background-color: rgba(235, 10, 30, 0.18);
+  background-color: rgba(235, 10, 30, 0.15);
 }
 
 .tocc-value-card h3,
@@ -736,7 +693,7 @@
 }
 
 .tocc-section--dark .tocc-value-card__number {
-  color: rgba(255, 255, 255, 0.15);
+  color: rgba(235, 10, 30, 0.3);
 }
 
 /* ============================================================
@@ -1118,8 +1075,8 @@
 
 /* Dark section testimonials */
 .tocc-section--dark .tocc-testimonial {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.12);
+  background: var(--tocc-gray-800);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .tocc-section--dark .tocc-testimonial__quote {
@@ -1573,16 +1530,8 @@
 }
 
 .tocc-lang-card__flag {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background-color: var(--tocc-red-light);
-  color: var(--tocc-red);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--tocc-space-md);
-  font-size: 1.5rem;
+  font-size: 3rem;
+  margin-bottom: var(--tocc-space-md);
   line-height: 1;
 }
 
