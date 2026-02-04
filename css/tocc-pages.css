@@ -1,5 +1,5 @@
 /* ============================================================
-   TOCC PAGES — Design System & Component Library
+   TOCC PAGES - Design System & Component Library
    Toyota of Coconut Creek Custom Page Styles
    
    Namespace: All classes prefixed with "tocc-"
@@ -31,7 +31,7 @@
   --tocc-gray-50: #FAFAFA;
   --tocc-white: #FFFFFF;
 
-  /* Tropical accents — from TOCC palm logo */
+  /* Tropical accents - from TOCC palm logo */
   --tocc-sunset: #F05A28;
   --tocc-sunset-light: #FEF0EB;
   --tocc-ocean: #0077B6;
@@ -263,7 +263,7 @@
   color: var(--tocc-white);
 }
 
-/* Red section interactive overrides — prevent red on red */
+/* Red section interactive overrides - prevent red on red */
 .tocc-section--red a {
   color: var(--tocc-white);
   text-decoration: underline;
@@ -381,7 +381,7 @@
   transform: translateY(0);
 }
 
-/* Primary — Red */
+/* Primary - Red */
 .tocc-btn--primary {
   background-color: var(--tocc-red);
   color: var(--tocc-white);
@@ -395,7 +395,7 @@
   box-shadow: 0 4px 16px rgba(235, 10, 30, 0.3);
 }
 
-/* Secondary — White outline */
+/* Secondary - White outline */
 .tocc-btn--secondary {
   background-color: transparent;
   color: var(--tocc-black);
@@ -420,7 +420,7 @@
   color: var(--tocc-black);
 }
 
-/* Ghost — minimal style */
+/* Ghost - minimal style */
 .tocc-btn--ghost {
   background-color: transparent;
   color: var(--tocc-red);
@@ -558,7 +558,7 @@
   gap: var(--tocc-space-md);
 }
 
-/* Hero variant — centered */
+/* Hero variant - centered */
 .tocc-hero--center .tocc-hero__content {
   text-align: center;
   margin-left: auto;
@@ -574,7 +574,7 @@
   justify-content: center;
 }
 
-/* Hero variant — compact (for interior pages) */
+/* Hero variant - compact (for interior pages) */
 .tocc-hero--compact {
   min-height: 240px;
   padding: var(--tocc-space-2xl) 0;
@@ -588,7 +588,7 @@
   .tocc-hero--compact { min-height: 320px; padding: var(--tocc-space-3xl) 0; }
 }
 
-/* Hero variant — with big price callout */
+/* Hero variant - with big price callout */
 .tocc-hero__price {
   font-family: var(--tocc-font-heading);
   font-size: var(--tocc-text-4xl);
@@ -817,7 +817,7 @@
   margin-bottom: 0;
 }
 
-/* Reverse order on desktop — text left, image right */
+/* Reverse order on desktop - text left, image right */
 @media (min-width: 768px) {
   .tocc-content-block--reverse .tocc-content-block__image {
     order: 2;
@@ -1325,7 +1325,7 @@
   color: var(--tocc-gray-600);
 }
 
-/* Leadership variant — larger cards */
+/* Leadership variant - larger cards */
 .tocc-staff-card--leader .tocc-staff-card__info {
   padding: var(--tocc-space-xl);
 }
@@ -1890,7 +1890,7 @@
   .tocc-wave svg { height: 80px; }
 }
 
-/* Wave color variants — fill matches the section ABOVE */
+/* Wave color variants - fill matches the section ABOVE */
 .tocc-wave--red svg { fill: var(--tocc-red); }
 .tocc-wave--dark svg { fill: var(--tocc-dark); }
 .tocc-wave--black svg { fill: var(--tocc-black); }
@@ -2027,56 +2027,6 @@
 
 .tocc-cta-strip--sunset .tocc-btn--primary:hover {
   background-color: var(--tocc-gray-100);
-}
-
-/* --- Palm Watermark ---
-   Adds a subtle palm silhouette to any section.
-   Usage: add class "tocc-palm-bg" to any tocc-section.
-   ------------------------------------------------------------ */
-.tocc-palm-bg {
-  position: relative;
-  overflow: hidden;
-}
-
-.tocc-palm-bg::after {
-  content: '';
-  position: absolute;
-  right: -40px;
-  bottom: -20px;
-  width: 280px;
-  height: 320px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240'%3E%3Cpath d='M100 240 L100 100 C100 100 60 50 20 60 C60 30 90 50 100 80 C100 80 80 20 40 10 C80 0 100 40 100 80 C100 80 120 20 160 10 C120 0 100 40 100 80 C110 50 140 30 180 60 C140 50 100 100 100 100' fill='%231A1A1A' opacity='0.06'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Flip palm to left side */
-.tocc-palm-bg--left::after {
-  right: auto;
-  left: -40px;
-  transform: scaleX(-1);
-}
-
-/* White palm on dark sections */
-.tocc-section--dark.tocc-palm-bg::after,
-.tocc-section--ocean.tocc-palm-bg::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240'%3E%3Cpath d='M100 240 L100 100 C100 100 60 50 20 60 C60 30 90 50 100 80 C100 80 80 20 40 10 C80 0 100 40 100 80 C100 80 120 20 160 10 C120 0 100 40 100 80 C110 50 140 30 180 60 C140 50 100 100 100 100' fill='%23ffffff' opacity='0.08'/%3E%3C/svg%3E");
-}
-
-.tocc-section--red.tocc-palm-bg::after,
-.tocc-section--sunset.tocc-palm-bg::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240'%3E%3Cpath d='M100 240 L100 100 C100 100 60 50 20 60 C60 30 90 50 100 80 C100 80 80 20 40 10 C80 0 100 40 100 80 C100 80 120 20 160 10 C120 0 100 40 100 80 C110 50 140 30 180 60 C140 50 100 100 100 100' fill='%23ffffff' opacity='0.08'/%3E%3C/svg%3E");
-}
-
-@media (min-width: 992px) {
-  .tocc-palm-bg::after {
-    width: 360px;
-    height: 420px;
-    right: -20px;
-    bottom: -40px;
-  }
 }
 
 /* ============================================================
