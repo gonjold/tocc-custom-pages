@@ -1,0 +1,1714 @@
+/* ============================================================
+   TOCC PAGES — Design System & Component Library
+   Toyota of Coconut Creek Custom Page Styles
+   
+   Namespace: All classes prefixed with "tocc-"
+   Platform:  Dealer Inspire WSP (Bootstrap 3 base)
+   Fonts:     Plus Jakarta Sans (headings), DM Sans (body)
+   
+   Built mobile-first: base styles = mobile, 
+   media queries enhance upward.
+   ============================================================ */
+
+/* ============================================================
+   0. CSS CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  /* --- Colors --- */
+  --tocc-red: #EB0A1E;
+  --tocc-red-dark: #C50818;
+  --tocc-red-light: #FFF0F1;
+  --tocc-red-glow: rgba(235, 10, 30, 0.12);
+
+  --tocc-black: #1A1A1A;
+  --tocc-dark: #2D2D2D;
+  --tocc-gray-800: #3D3D3D;
+  --tocc-gray-600: #666666;
+  --tocc-gray-400: #999999;
+  --tocc-gray-300: #CCCCCC;
+  --tocc-gray-200: #E5E5E5;
+  --tocc-gray-100: #F5F5F5;
+  --tocc-gray-50: #FAFAFA;
+  --tocc-white: #FFFFFF;
+
+  --tocc-gold: #C4A962;
+  --tocc-gold-light: #F9F4E8;
+  --tocc-blue: #0066CC;
+  --tocc-blue-light: #EBF4FF;
+  --tocc-green: #28A745;
+  --tocc-green-light: #EAFBEF;
+
+  /* --- Typography --- */
+  --tocc-font-heading: 'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif;
+  --tocc-font-body: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  --tocc-text-xs: 0.75rem;
+  --tocc-text-sm: 0.875rem;
+  --tocc-text-base: 1rem;
+  --tocc-text-lg: 1.125rem;
+  --tocc-text-xl: 1.25rem;
+  --tocc-text-2xl: 1.5rem;
+  --tocc-text-3xl: 2rem;
+  --tocc-text-4xl: 2.5rem;
+  --tocc-text-5xl: 3.25rem;
+
+  --tocc-leading-tight: 1.15;
+  --tocc-leading-snug: 1.3;
+  --tocc-leading-normal: 1.6;
+
+  --tocc-weight-regular: 400;
+  --tocc-weight-medium: 500;
+  --tocc-weight-semibold: 600;
+  --tocc-weight-bold: 700;
+  --tocc-weight-extrabold: 800;
+
+  /* --- Spacing --- */
+  --tocc-space-xs: 0.25rem;
+  --tocc-space-sm: 0.5rem;
+  --tocc-space-md: 1rem;
+  --tocc-space-lg: 1.5rem;
+  --tocc-space-xl: 2rem;
+  --tocc-space-2xl: 3rem;
+  --tocc-space-3xl: 4rem;
+  --tocc-space-4xl: 5rem;
+  --tocc-space-5xl: 6rem;
+
+  /* --- Layout --- */
+  --tocc-container-max: 1200px;
+  --tocc-container-narrow: 900px;
+  --tocc-container-wide: 1400px;
+  --tocc-container-padding: 1.25rem;
+  --tocc-section-padding: 3rem;
+
+  /* --- Borders & Radii --- */
+  --tocc-radius-sm: 6px;
+  --tocc-radius-md: 10px;
+  --tocc-radius-lg: 16px;
+  --tocc-radius-xl: 24px;
+  --tocc-radius-full: 50px;
+
+  /* --- Shadows --- */
+  --tocc-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --tocc-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --tocc-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.04);
+  --tocc-shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.06);
+
+  /* --- Transitions --- */
+  --tocc-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --tocc-duration-fast: 150ms;
+  --tocc-duration: 250ms;
+  --tocc-duration-slow: 400ms;
+}
+
+/* Desktop spacing bump */
+@media (min-width: 992px) {
+  :root {
+    --tocc-container-padding: 2rem;
+    --tocc-section-padding: 5rem;
+  }
+}
+
+/* ============================================================
+   1. BASE / RESET (scoped to .tocc-page)
+   
+   Every custom page wraps all content in a .tocc-page container.
+   This scopes all our styles and prevents DI bleed.
+   ============================================================ */
+.tocc-page {
+  font-family: var(--tocc-font-body);
+  font-size: var(--tocc-text-base);
+  line-height: var(--tocc-leading-normal);
+  color: var(--tocc-black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tocc-page *,
+.tocc-page *::before,
+.tocc-page *::after {
+  box-sizing: border-box;
+}
+
+.tocc-page img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tocc-page h1,
+.tocc-page h2,
+.tocc-page h3,
+.tocc-page h4,
+.tocc-page h5,
+.tocc-page h6 {
+  font-family: var(--tocc-font-heading);
+  font-weight: var(--tocc-weight-bold);
+  line-height: var(--tocc-leading-tight);
+  color: var(--tocc-black);
+  margin: 0 0 var(--tocc-space-md) 0;
+}
+
+.tocc-page h1 { font-size: var(--tocc-text-3xl); font-weight: var(--tocc-weight-extrabold); }
+.tocc-page h2 { font-size: var(--tocc-text-2xl); }
+.tocc-page h3 { font-size: var(--tocc-text-xl); font-weight: var(--tocc-weight-semibold); }
+.tocc-page h4 { font-size: var(--tocc-text-lg); font-weight: var(--tocc-weight-semibold); }
+
+@media (min-width: 768px) {
+  .tocc-page h1 { font-size: var(--tocc-text-4xl); }
+  .tocc-page h2 { font-size: var(--tocc-text-3xl); }
+  .tocc-page h3 { font-size: var(--tocc-text-2xl); }
+}
+
+@media (min-width: 992px) {
+  .tocc-page h1 { font-size: var(--tocc-text-5xl); }
+}
+
+.tocc-page p {
+  margin: 0 0 var(--tocc-space-md) 0;
+  color: var(--tocc-gray-600);
+  line-height: var(--tocc-leading-normal);
+}
+
+.tocc-page a {
+  color: var(--tocc-red);
+  text-decoration: none;
+  transition: color var(--tocc-duration) var(--tocc-ease);
+}
+
+.tocc-page a:hover {
+  color: var(--tocc-red-dark);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   2. LAYOUT UTILITIES
+   ============================================================ */
+.tocc-container {
+  width: 100%;
+  max-width: var(--tocc-container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--tocc-container-padding);
+  padding-right: var(--tocc-container-padding);
+}
+
+.tocc-container--narrow {
+  max-width: var(--tocc-container-narrow);
+}
+
+.tocc-container--wide {
+  max-width: var(--tocc-container-wide);
+}
+
+.tocc-section {
+  padding-top: var(--tocc-section-padding);
+  padding-bottom: var(--tocc-section-padding);
+}
+
+.tocc-section--dark {
+  background-color: var(--tocc-dark);
+  color: var(--tocc-white);
+}
+
+.tocc-section--dark h1,
+.tocc-section--dark h2,
+.tocc-section--dark h3,
+.tocc-section--dark h4 {
+  color: var(--tocc-white);
+}
+
+.tocc-section--dark p {
+  color: var(--tocc-gray-300);
+}
+
+.tocc-section--light {
+  background-color: var(--tocc-gray-100);
+}
+
+.tocc-section--red {
+  background-color: var(--tocc-red);
+  color: var(--tocc-white);
+}
+
+.tocc-section--red h1,
+.tocc-section--red h2,
+.tocc-section--red h3,
+.tocc-section--red h4,
+.tocc-section--red p {
+  color: var(--tocc-white);
+}
+
+.tocc-section-header {
+  text-align: center;
+  margin-bottom: var(--tocc-space-2xl);
+}
+
+.tocc-section-header h2 {
+  margin-bottom: var(--tocc-space-sm);
+}
+
+.tocc-section-header p {
+  font-size: var(--tocc-text-lg);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tocc-eyebrow {
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-xs);
+  font-weight: var(--tocc-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--tocc-red);
+  margin-bottom: var(--tocc-space-sm);
+  display: block;
+}
+
+.tocc-section--dark .tocc-eyebrow,
+.tocc-section--red .tocc-eyebrow {
+  color: var(--tocc-gold);
+}
+
+.tocc-divider {
+  width: 48px;
+  height: 3px;
+  background-color: var(--tocc-red);
+  border: none;
+  margin: var(--tocc-space-lg) 0;
+}
+
+.tocc-divider--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
+   3. BUTTONS
+   ============================================================ */
+.tocc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-sm);
+  font-weight: var(--tocc-weight-semibold);
+  line-height: 1;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--tocc-radius-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--tocc-duration) var(--tocc-ease);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.tocc-btn:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.tocc-btn:active {
+  transform: translateY(0);
+}
+
+/* Primary — Red */
+.tocc-btn--primary {
+  background-color: var(--tocc-red);
+  color: var(--tocc-white);
+  border-color: var(--tocc-red);
+}
+
+.tocc-btn--primary:hover {
+  background-color: var(--tocc-red-dark);
+  border-color: var(--tocc-red-dark);
+  color: var(--tocc-white);
+  box-shadow: 0 4px 16px rgba(235, 10, 30, 0.3);
+}
+
+/* Secondary — White outline */
+.tocc-btn--secondary {
+  background-color: transparent;
+  color: var(--tocc-black);
+  border-color: var(--tocc-black);
+}
+
+.tocc-btn--secondary:hover {
+  background-color: var(--tocc-black);
+  color: var(--tocc-white);
+}
+
+/* On dark backgrounds */
+.tocc-section--dark .tocc-btn--secondary,
+.tocc-hero .tocc-btn--secondary {
+  color: var(--tocc-white);
+  border-color: var(--tocc-white);
+}
+
+.tocc-section--dark .tocc-btn--secondary:hover,
+.tocc-hero .tocc-btn--secondary:hover {
+  background-color: var(--tocc-white);
+  color: var(--tocc-black);
+}
+
+/* Ghost — minimal style */
+.tocc-btn--ghost {
+  background-color: transparent;
+  color: var(--tocc-red);
+  border-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.tocc-btn--ghost:hover {
+  color: var(--tocc-red-dark);
+  transform: none;
+}
+
+.tocc-btn--ghost::after {
+  content: '→';
+  transition: transform var(--tocc-duration) var(--tocc-ease);
+}
+
+.tocc-btn--ghost:hover::after {
+  transform: translateX(4px);
+}
+
+/* Size variants */
+.tocc-btn--lg {
+  font-size: var(--tocc-text-base);
+  padding: 1rem 2.25rem;
+}
+
+.tocc-btn--sm {
+  font-size: var(--tocc-text-xs);
+  padding: 0.625rem 1.25rem;
+}
+
+.tocc-btn--full {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .tocc-btn--full {
+    width: auto;
+  }
+}
+
+/* Button group */
+.tocc-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tocc-space-md);
+}
+
+.tocc-btn-group--center {
+  justify-content: center;
+}
+
+/* ============================================================
+   4. HERO BANNER
+   ============================================================ */
+.tocc-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 360px;
+  padding: var(--tocc-space-3xl) 0;
+  background-color: var(--tocc-dark);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .tocc-hero { min-height: 440px; }
+}
+
+@media (min-width: 992px) {
+  .tocc-hero { min-height: 500px; padding: var(--tocc-space-5xl) 0; }
+}
+
+.tocc-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 1;
+}
+
+.tocc-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.tocc-hero__eyebrow {
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-xs);
+  font-weight: var(--tocc-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--tocc-gold);
+  margin-bottom: var(--tocc-space-md);
+  display: block;
+}
+
+.tocc-hero__title {
+  font-size: var(--tocc-text-3xl);
+  font-weight: var(--tocc-weight-extrabold);
+  color: var(--tocc-white);
+  margin-bottom: var(--tocc-space-md);
+  line-height: var(--tocc-leading-tight);
+}
+
+@media (min-width: 768px) {
+  .tocc-hero__title { font-size: var(--tocc-text-4xl); }
+}
+
+@media (min-width: 992px) {
+  .tocc-hero__title { font-size: var(--tocc-text-5xl); }
+}
+
+.tocc-hero__subtitle {
+  font-size: var(--tocc-text-lg);
+  color: var(--tocc-gray-300);
+  margin-bottom: var(--tocc-space-xl);
+  max-width: 560px;
+  line-height: var(--tocc-leading-normal);
+}
+
+.tocc-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tocc-space-md);
+}
+
+/* Hero variant — centered */
+.tocc-hero--center .tocc-hero__content {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tocc-hero--center .tocc-hero__subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tocc-hero--center .tocc-hero__actions {
+  justify-content: center;
+}
+
+/* Hero variant — compact (for interior pages) */
+.tocc-hero--compact {
+  min-height: 240px;
+  padding: var(--tocc-space-2xl) 0;
+}
+
+@media (min-width: 768px) {
+  .tocc-hero--compact { min-height: 280px; }
+}
+
+@media (min-width: 992px) {
+  .tocc-hero--compact { min-height: 320px; padding: var(--tocc-space-3xl) 0; }
+}
+
+/* Hero variant — with big price callout */
+.tocc-hero__price {
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-4xl);
+  font-weight: var(--tocc-weight-extrabold);
+  color: var(--tocc-white);
+  margin-bottom: var(--tocc-space-xs);
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .tocc-hero__price { font-size: 4rem; }
+}
+
+@media (min-width: 992px) {
+  .tocc-hero__price { font-size: 5rem; }
+}
+
+.tocc-hero__price-note {
+  font-size: var(--tocc-text-sm);
+  color: var(--tocc-gray-400);
+  margin-bottom: var(--tocc-space-lg);
+}
+
+/* ============================================================
+   5. STATS BAR
+   ============================================================ */
+.tocc-stats {
+  background-color: var(--tocc-black);
+  padding: var(--tocc-space-xl) 0;
+}
+
+.tocc-stats--red {
+  background-color: var(--tocc-red);
+}
+
+.tocc-stats__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--tocc-space-lg);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .tocc-stats__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--tocc-space-xl);
+  }
+}
+
+.tocc-stats__item {
+  padding: var(--tocc-space-sm) 0;
+}
+
+.tocc-stats__number {
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-3xl);
+  font-weight: var(--tocc-weight-extrabold);
+  color: var(--tocc-white);
+  line-height: 1;
+  margin-bottom: var(--tocc-space-xs);
+}
+
+@media (min-width: 768px) {
+  .tocc-stats__number { font-size: var(--tocc-text-4xl); }
+}
+
+.tocc-stats__label {
+  font-size: var(--tocc-text-sm);
+  font-weight: var(--tocc-weight-medium);
+  color: var(--tocc-gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tocc-stats--red .tocc-stats__label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ============================================================
+   6. VALUE PROPOSITION GRID
+   ============================================================ */
+.tocc-values__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--tocc-space-lg);
+}
+
+@media (min-width: 576px) {
+  .tocc-values__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 992px) {
+  .tocc-values__grid { grid-template-columns: repeat(3, 1fr); }
+  .tocc-values__grid--4col { grid-template-columns: repeat(4, 1fr); }
+}
+
+.tocc-value-card {
+  background: var(--tocc-white);
+  border: 1px solid var(--tocc-gray-200);
+  border-radius: var(--tocc-radius-lg);
+  padding: var(--tocc-space-xl);
+  transition: all var(--tocc-duration) var(--tocc-ease);
+}
+
+.tocc-value-card:hover {
+  border-color: var(--tocc-gray-300);
+  box-shadow: var(--tocc-shadow-md);
+  transform: translateY(-2px);
+}
+
+.tocc-section--light .tocc-value-card {
+  background: var(--tocc-white);
+}
+
+.tocc-section--dark .tocc-value-card {
+  background: var(--tocc-gray-800);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.tocc-section--dark .tocc-value-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.tocc-section--dark .tocc-value-card h3,
+.tocc-section--dark .tocc-value-card h4 {
+  color: var(--tocc-white);
+}
+
+.tocc-section--dark .tocc-value-card p {
+  color: var(--tocc-gray-400);
+}
+
+.tocc-value-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--tocc-red-light);
+  color: var(--tocc-red);
+  border-radius: var(--tocc-radius-md);
+  margin-bottom: var(--tocc-space-md);
+  font-size: 1.25rem;
+}
+
+.tocc-section--dark .tocc-value-card__icon {
+  background-color: rgba(235, 10, 30, 0.15);
+}
+
+.tocc-value-card h3,
+.tocc-value-card h4 {
+  font-size: var(--tocc-text-lg);
+  margin-bottom: var(--tocc-space-sm);
+}
+
+.tocc-value-card p {
+  font-size: var(--tocc-text-sm);
+  margin-bottom: 0;
+}
+
+/* Numbered variant */
+.tocc-value-card__number {
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-4xl);
+  font-weight: var(--tocc-weight-extrabold);
+  color: var(--tocc-red-light);
+  line-height: 1;
+  margin-bottom: var(--tocc-space-sm);
+}
+
+.tocc-section--dark .tocc-value-card__number {
+  color: rgba(235, 10, 30, 0.3);
+}
+
+/* ============================================================
+   7. CONTENT BLOCKS (alternating text + image)
+   ============================================================ */
+.tocc-content-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--tocc-space-xl);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .tocc-content-block {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--tocc-space-3xl);
+  }
+}
+
+.tocc-content-block__image {
+  border-radius: var(--tocc-radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.tocc-content-block__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tocc-content-block__text h2,
+.tocc-content-block__text h3 {
+  margin-bottom: var(--tocc-space-md);
+}
+
+.tocc-content-block__text p {
+  margin-bottom: var(--tocc-space-md);
+}
+
+.tocc-content-block__text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Reverse order on desktop (image right, text left → image left, text right) */
+@media (min-width: 768px) {
+  .tocc-content-block--reverse .tocc-content-block__image {
+    order: -1;
+  }
+}
+
+/* ============================================================
+   8. CTA STRIP
+   ============================================================ */
+.tocc-cta-strip {
+  background-color: var(--tocc-red);
+  padding: var(--tocc-space-2xl) 0;
+}
+
+.tocc-cta-strip--dark {
+  background-color: var(--tocc-dark);
+}
+
+.tocc-cta-strip--gold {
+  background-color: var(--tocc-gold);
+}
+
+.tocc-cta-strip--gold .tocc-cta-strip__text {
+  color: var(--tocc-black);
+}
+
+.tocc-cta-strip__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--tocc-space-lg);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .tocc-cta-strip__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.tocc-cta-strip__text {
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-xl);
+  font-weight: var(--tocc-weight-bold);
+  color: var(--tocc-white);
+  margin: 0;
+  line-height: var(--tocc-leading-snug);
+}
+
+@media (min-width: 768px) {
+  .tocc-cta-strip__text { font-size: var(--tocc-text-2xl); }
+}
+
+.tocc-cta-strip .tocc-btn--primary {
+  background-color: var(--tocc-white);
+  color: var(--tocc-red);
+  border-color: var(--tocc-white);
+}
+
+.tocc-cta-strip .tocc-btn--primary:hover {
+  background-color: var(--tocc-gray-100);
+  box-shadow: var(--tocc-shadow-lg);
+}
+
+.tocc-cta-strip--dark .tocc-btn--primary {
+  background-color: var(--tocc-red);
+  color: var(--tocc-white);
+  border-color: var(--tocc-red);
+}
+
+.tocc-cta-strip--dark .tocc-btn--primary:hover {
+  background-color: var(--tocc-red-dark);
+}
+
+.tocc-cta-strip--gold .tocc-btn--primary {
+  background-color: var(--tocc-black);
+  color: var(--tocc-white);
+  border-color: var(--tocc-black);
+}
+
+/* ============================================================
+   9. FAQ ACCORDION
+   ============================================================ */
+.tocc-faq__list {
+  max-width: var(--tocc-container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tocc-faq__item {
+  border-bottom: 1px solid var(--tocc-gray-200);
+}
+
+.tocc-faq__item:first-child {
+  border-top: 1px solid var(--tocc-gray-200);
+}
+
+.tocc-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--tocc-space-lg) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-base);
+  font-weight: var(--tocc-weight-semibold);
+  color: var(--tocc-black);
+  text-align: left;
+  line-height: var(--tocc-leading-snug);
+  gap: var(--tocc-space-md);
+  transition: color var(--tocc-duration) var(--tocc-ease);
+}
+
+@media (min-width: 768px) {
+  .tocc-faq__question { font-size: var(--tocc-text-lg); }
+}
+
+.tocc-faq__question:hover {
+  color: var(--tocc-red);
+}
+
+.tocc-faq__icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.tocc-faq__icon::before,
+.tocc-faq__icon::after {
+  content: '';
+  position: absolute;
+  background-color: var(--tocc-gray-400);
+  transition: transform var(--tocc-duration) var(--tocc-ease), opacity var(--tocc-duration) var(--tocc-ease);
+}
+
+.tocc-faq__icon::before {
+  width: 16px;
+  height: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tocc-faq__icon::after {
+  width: 2px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tocc-faq__item.tocc-active .tocc-faq__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  opacity: 0;
+}
+
+.tocc-faq__item.tocc-active .tocc-faq__question {
+  color: var(--tocc-red);
+}
+
+.tocc-faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--tocc-duration-slow) var(--tocc-ease);
+}
+
+.tocc-faq__answer-inner {
+  padding-bottom: var(--tocc-space-lg);
+}
+
+.tocc-faq__answer-inner p {
+  font-size: var(--tocc-text-base);
+  color: var(--tocc-gray-600);
+}
+
+.tocc-faq__answer-inner p:last-child {
+  margin-bottom: 0;
+}
+
+.tocc-faq__item.tocc-active .tocc-faq__answer {
+  max-height: 600px;
+}
+
+/* Dark section FAQ */
+.tocc-section--dark .tocc-faq__item {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.tocc-section--dark .tocc-faq__question {
+  color: var(--tocc-white);
+}
+
+.tocc-section--dark .tocc-faq__answer-inner p {
+  color: var(--tocc-gray-400);
+}
+
+/* ============================================================
+   10. COMPARISON TABLE
+   ============================================================ */
+.tocc-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--tocc-radius-lg);
+  border: 1px solid var(--tocc-gray-200);
+}
+
+.tocc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--tocc-text-sm);
+}
+
+@media (min-width: 768px) {
+  .tocc-table { font-size: var(--tocc-text-base); }
+}
+
+.tocc-table thead {
+  background-color: var(--tocc-black);
+  color: var(--tocc-white);
+}
+
+.tocc-table th {
+  font-family: var(--tocc-font-heading);
+  font-weight: var(--tocc-weight-semibold);
+  padding: var(--tocc-space-md) var(--tocc-space-lg);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.tocc-table td {
+  padding: var(--tocc-space-md) var(--tocc-space-lg);
+  border-bottom: 1px solid var(--tocc-gray-200);
+  vertical-align: middle;
+}
+
+.tocc-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tocc-table tbody tr:nth-child(even) {
+  background-color: var(--tocc-gray-50);
+}
+
+.tocc-table tbody tr:hover {
+  background-color: var(--tocc-red-light);
+}
+
+/* Highlight "us" column */
+.tocc-table .tocc-table__highlight {
+  background-color: var(--tocc-red-light);
+  font-weight: var(--tocc-weight-semibold);
+  color: var(--tocc-black);
+}
+
+.tocc-table thead .tocc-table__highlight {
+  background-color: var(--tocc-red);
+  color: var(--tocc-white);
+}
+
+/* Check / X marks */
+.tocc-check {
+  color: var(--tocc-green);
+  font-weight: var(--tocc-weight-bold);
+}
+
+.tocc-check::before { content: '✓'; }
+
+.tocc-x {
+  color: var(--tocc-gray-400);
+  font-weight: var(--tocc-weight-bold);
+}
+
+.tocc-x::before { content: '✗'; }
+
+/* ============================================================
+   11. TESTIMONIAL CARDS
+   ============================================================ */
+.tocc-testimonials__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--tocc-space-lg);
+}
+
+@media (min-width: 768px) {
+  .tocc-testimonials__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 992px) {
+  .tocc-testimonials__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.tocc-testimonial {
+  background: var(--tocc-white);
+  border: 1px solid var(--tocc-gray-200);
+  border-radius: var(--tocc-radius-lg);
+  padding: var(--tocc-space-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.tocc-testimonial__stars {
+  color: #F59E0B;
+  font-size: var(--tocc-text-lg);
+  margin-bottom: var(--tocc-space-md);
+  letter-spacing: 2px;
+}
+
+.tocc-testimonial__quote {
+  font-size: var(--tocc-text-base);
+  color: var(--tocc-gray-600);
+  line-height: var(--tocc-leading-normal);
+  font-style: italic;
+  flex: 1;
+  margin-bottom: var(--tocc-space-lg);
+}
+
+.tocc-testimonial__author {
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-sm);
+  font-weight: var(--tocc-weight-semibold);
+  color: var(--tocc-black);
+}
+
+.tocc-testimonial__source {
+  font-size: var(--tocc-text-xs);
+  color: var(--tocc-gray-400);
+}
+
+/* Dark section testimonials */
+.tocc-section--dark .tocc-testimonial {
+  background: var(--tocc-gray-800);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.tocc-section--dark .tocc-testimonial__quote {
+  color: var(--tocc-gray-300);
+}
+
+.tocc-section--dark .tocc-testimonial__author {
+  color: var(--tocc-white);
+}
+
+/* ============================================================
+   12. STAFF / LEADERSHIP CARDS
+   ============================================================ */
+.tocc-staff__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--tocc-space-lg);
+}
+
+@media (min-width: 576px) {
+  .tocc-staff__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 992px) {
+  .tocc-staff__grid { grid-template-columns: repeat(3, 1fr); }
+  .tocc-staff__grid--4col { grid-template-columns: repeat(4, 1fr); }
+}
+
+.tocc-staff-card {
+  background: var(--tocc-white);
+  border: 1px solid var(--tocc-gray-200);
+  border-radius: var(--tocc-radius-lg);
+  overflow: hidden;
+  transition: all var(--tocc-duration) var(--tocc-ease);
+}
+
+.tocc-staff-card:hover {
+  box-shadow: var(--tocc-shadow-md);
+  transform: translateY(-2px);
+}
+
+.tocc-staff-card__photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background-color: var(--tocc-gray-100);
+}
+
+.tocc-staff-card__info {
+  padding: var(--tocc-space-lg);
+}
+
+.tocc-staff-card__name {
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-lg);
+  font-weight: var(--tocc-weight-bold);
+  color: var(--tocc-black);
+  margin-bottom: var(--tocc-space-xs);
+}
+
+.tocc-staff-card__title {
+  font-size: var(--tocc-text-sm);
+  color: var(--tocc-gray-600);
+  margin-bottom: var(--tocc-space-sm);
+}
+
+.tocc-staff-card__tenure {
+  font-size: var(--tocc-text-xs);
+  color: var(--tocc-gray-400);
+  margin-bottom: var(--tocc-space-md);
+}
+
+.tocc-staff-card__lang {
+  display: flex;
+  gap: var(--tocc-space-xs);
+  flex-wrap: wrap;
+}
+
+.tocc-lang-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  font-size: var(--tocc-text-xs);
+  font-weight: var(--tocc-weight-medium);
+  padding: 0.2em 0.6em;
+  border-radius: var(--tocc-radius-sm);
+  background-color: var(--tocc-gray-100);
+  color: var(--tocc-gray-600);
+}
+
+/* Leadership variant — larger cards */
+.tocc-staff-card--leader .tocc-staff-card__info {
+  padding: var(--tocc-space-xl);
+}
+
+.tocc-staff-card--leader .tocc-staff-card__name {
+  font-size: var(--tocc-text-xl);
+}
+
+.tocc-staff-card--leader .tocc-staff-card__bio {
+  font-size: var(--tocc-text-sm);
+  color: var(--tocc-gray-600);
+  margin-bottom: var(--tocc-space-md);
+  line-height: var(--tocc-leading-normal);
+}
+
+/* ============================================================
+   13. RESEARCH / MODEL CARDS
+   ============================================================ */
+.tocc-research__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--tocc-space-md);
+}
+
+@media (min-width: 576px) {
+  .tocc-research__grid { gap: var(--tocc-space-lg); }
+}
+
+@media (min-width: 768px) {
+  .tocc-research__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 992px) {
+  .tocc-research__grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.tocc-research-card {
+  background: var(--tocc-white);
+  border: 1px solid var(--tocc-gray-200);
+  border-radius: var(--tocc-radius-lg);
+  padding: var(--tocc-space-lg);
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  transition: all var(--tocc-duration) var(--tocc-ease);
+}
+
+.tocc-research-card:hover {
+  border-color: var(--tocc-red);
+  box-shadow: var(--tocc-shadow-md);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.tocc-research-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  margin-bottom: var(--tocc-space-md);
+}
+
+.tocc-research-card__name {
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-sm);
+  font-weight: var(--tocc-weight-bold);
+  color: var(--tocc-black);
+  margin-bottom: var(--tocc-space-xs);
+}
+
+@media (min-width: 768px) {
+  .tocc-research-card__name { font-size: var(--tocc-text-base); }
+}
+
+.tocc-research-card__price {
+  font-size: var(--tocc-text-xs);
+  color: var(--tocc-gray-600);
+}
+
+.tocc-research-card:hover .tocc-research-card__name {
+  color: var(--tocc-red);
+}
+
+/* ============================================================
+   14. TABS (for filtering: department, category, etc.)
+   ============================================================ */
+.tocc-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tocc-space-sm);
+  margin-bottom: var(--tocc-space-2xl);
+  justify-content: center;
+}
+
+.tocc-tab {
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-sm);
+  font-weight: var(--tocc-weight-semibold);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--tocc-radius-full);
+  border: 1px solid var(--tocc-gray-200);
+  background: var(--tocc-white);
+  color: var(--tocc-gray-600);
+  cursor: pointer;
+  transition: all var(--tocc-duration) var(--tocc-ease);
+}
+
+.tocc-tab:hover {
+  border-color: var(--tocc-gray-400);
+  color: var(--tocc-black);
+}
+
+.tocc-tab.tocc-active {
+  background-color: var(--tocc-red);
+  border-color: var(--tocc-red);
+  color: var(--tocc-white);
+}
+
+.tocc-tab-panel {
+  display: none;
+}
+
+.tocc-tab-panel.tocc-active {
+  display: block;
+}
+
+/* ============================================================
+   15. PROCESS STEPS (how-it-works)
+   ============================================================ */
+.tocc-steps__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--tocc-space-xl);
+  counter-reset: step;
+}
+
+@media (min-width: 768px) {
+  .tocc-steps__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--tocc-space-2xl);
+  }
+}
+
+.tocc-step {
+  text-align: center;
+  position: relative;
+  counter-increment: step;
+}
+
+.tocc-step__number {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--tocc-space-md);
+  border-radius: 50%;
+  background-color: var(--tocc-red);
+  color: var(--tocc-white);
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-xl);
+  font-weight: var(--tocc-weight-extrabold);
+}
+
+.tocc-step h3,
+.tocc-step h4 {
+  font-size: var(--tocc-text-lg);
+  margin-bottom: var(--tocc-space-sm);
+}
+
+.tocc-step p {
+  font-size: var(--tocc-text-sm);
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Connector line between steps (desktop only) */
+@media (min-width: 768px) {
+  .tocc-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: calc(50% + 36px);
+    width: calc(100% - 72px);
+    height: 2px;
+    background: var(--tocc-gray-200);
+  }
+}
+
+/* ============================================================
+   16. PRICING / SERVICE CARDS
+   ============================================================ */
+.tocc-pricing__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--tocc-space-lg);
+}
+
+@media (min-width: 576px) {
+  .tocc-pricing__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 992px) {
+  .tocc-pricing__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.tocc-pricing-card {
+  background: var(--tocc-white);
+  border: 1px solid var(--tocc-gray-200);
+  border-radius: var(--tocc-radius-lg);
+  padding: var(--tocc-space-xl);
+  text-align: center;
+  transition: all var(--tocc-duration) var(--tocc-ease);
+}
+
+.tocc-pricing-card:hover {
+  box-shadow: var(--tocc-shadow-md);
+}
+
+.tocc-pricing-card--featured {
+  border-color: var(--tocc-red);
+  border-width: 2px;
+  position: relative;
+}
+
+.tocc-pricing-card__badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--tocc-red);
+  color: var(--tocc-white);
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-xs);
+  font-weight: var(--tocc-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25em 1em;
+  border-radius: var(--tocc-radius-full);
+  white-space: nowrap;
+}
+
+.tocc-pricing-card__title {
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-lg);
+  font-weight: var(--tocc-weight-bold);
+  color: var(--tocc-black);
+  margin-bottom: var(--tocc-space-sm);
+}
+
+.tocc-pricing-card__price {
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-3xl);
+  font-weight: var(--tocc-weight-extrabold);
+  color: var(--tocc-red);
+  margin-bottom: var(--tocc-space-xs);
+}
+
+.tocc-pricing-card__note {
+  font-size: var(--tocc-text-sm);
+  color: var(--tocc-gray-400);
+  margin-bottom: var(--tocc-space-lg);
+}
+
+.tocc-pricing-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--tocc-space-xl) 0;
+  text-align: left;
+}
+
+.tocc-pricing-card__features li {
+  font-size: var(--tocc-text-sm);
+  color: var(--tocc-gray-600);
+  padding: var(--tocc-space-sm) 0;
+  border-bottom: 1px solid var(--tocc-gray-100);
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.tocc-pricing-card__features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--tocc-green);
+  font-weight: var(--tocc-weight-bold);
+}
+
+/* ============================================================
+   17. CHECKLIST (simple feature list with checks)
+   ============================================================ */
+.tocc-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tocc-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--tocc-space-md);
+  padding: var(--tocc-space-md) 0;
+  font-size: var(--tocc-text-base);
+  color: var(--tocc-gray-600);
+  border-bottom: 1px solid var(--tocc-gray-100);
+}
+
+.tocc-checklist li:last-child {
+  border-bottom: none;
+}
+
+.tocc-checklist li::before {
+  content: '✓';
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--tocc-green-light);
+  color: var(--tocc-green);
+  font-size: var(--tocc-text-sm);
+  font-weight: var(--tocc-weight-bold);
+}
+
+/* ============================================================
+   18. LANGUAGE SELECTOR
+   ============================================================ */
+.tocc-lang-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--tocc-space-lg);
+}
+
+@media (min-width: 576px) {
+  .tocc-lang-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 992px) {
+  .tocc-lang-cards { grid-template-columns: repeat(4, 1fr); }
+}
+
+.tocc-lang-card {
+  background: var(--tocc-white);
+  border: 2px solid var(--tocc-gray-200);
+  border-radius: var(--tocc-radius-lg);
+  padding: var(--tocc-space-xl);
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  transition: all var(--tocc-duration) var(--tocc-ease);
+}
+
+.tocc-lang-card:hover {
+  border-color: var(--tocc-red);
+  box-shadow: var(--tocc-shadow-md);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.tocc-lang-card__flag {
+  font-size: 3rem;
+  margin-bottom: var(--tocc-space-md);
+  line-height: 1;
+}
+
+.tocc-lang-card__name {
+  font-family: var(--tocc-font-heading);
+  font-size: var(--tocc-text-lg);
+  font-weight: var(--tocc-weight-bold);
+  color: var(--tocc-black);
+  margin-bottom: var(--tocc-space-xs);
+}
+
+.tocc-lang-card__native {
+  font-size: var(--tocc-text-sm);
+  color: var(--tocc-gray-600);
+}
+
+/* ============================================================
+   19. MAP / CONTACT INFO BLOCK
+   ============================================================ */
+.tocc-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--tocc-space-xl);
+}
+
+@media (min-width: 768px) {
+  .tocc-contact-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.tocc-contact-info__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--tocc-space-md);
+  padding: var(--tocc-space-md) 0;
+  border-bottom: 1px solid var(--tocc-gray-100);
+}
+
+.tocc-contact-info__item:last-child {
+  border-bottom: none;
+}
+
+.tocc-contact-info__icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--tocc-red-light);
+  color: var(--tocc-red);
+  border-radius: var(--tocc-radius-sm);
+  font-size: var(--tocc-text-sm);
+}
+
+.tocc-contact-info__label {
+  font-size: var(--tocc-text-xs);
+  font-weight: var(--tocc-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--tocc-gray-400);
+  margin-bottom: 2px;
+}
+
+.tocc-contact-info__value {
+  font-size: var(--tocc-text-base);
+  font-weight: var(--tocc-weight-medium);
+  color: var(--tocc-black);
+}
+
+.tocc-contact-info__value a {
+  color: var(--tocc-black);
+}
+
+.tocc-contact-info__value a:hover {
+  color: var(--tocc-red);
+}
+
+.tocc-map-embed {
+  border-radius: var(--tocc-radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background-color: var(--tocc-gray-100);
+}
+
+.tocc-map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ============================================================
+   20. BREADCRUMBS
+   ============================================================ */
+.tocc-breadcrumbs {
+  padding: var(--tocc-space-md) 0;
+  font-size: var(--tocc-text-sm);
+  color: var(--tocc-gray-400);
+}
+
+.tocc-breadcrumbs a {
+  color: var(--tocc-gray-400);
+  text-decoration: none;
+}
+
+.tocc-breadcrumbs a:hover {
+  color: var(--tocc-red);
+  text-decoration: underline;
+}
+
+.tocc-breadcrumbs__sep {
+  margin: 0 0.5em;
+}
+
+.tocc-breadcrumbs__current {
+  color: var(--tocc-black);
+  font-weight: var(--tocc-weight-medium);
+}
+
+/* ============================================================
+   21. FINE PRINT / DISCLAIMERS
+   ============================================================ */
+.tocc-fine-print {
+  font-size: var(--tocc-text-xs);
+  color: var(--tocc-gray-400);
+  line-height: var(--tocc-leading-normal);
+  padding: var(--tocc-space-lg) 0;
+  border-top: 1px solid var(--tocc-gray-200);
+  margin-top: var(--tocc-space-xl);
+}
+
+/* ============================================================
+   22. UTILITY CLASSES
+   ============================================================ */
+.tocc-text-center { text-align: center; }
+.tocc-text-left { text-align: left; }
+.tocc-text-right { text-align: right; }
+
+.tocc-mt-0 { margin-top: 0; }
+.tocc-mb-0 { margin-bottom: 0; }
+.tocc-mt-lg { margin-top: var(--tocc-space-lg); }
+.tocc-mb-lg { margin-bottom: var(--tocc-space-lg); }
+.tocc-mt-xl { margin-top: var(--tocc-space-xl); }
+.tocc-mb-xl { margin-bottom: var(--tocc-space-xl); }
+.tocc-mt-2xl { margin-top: var(--tocc-space-2xl); }
+.tocc-mb-2xl { margin-bottom: var(--tocc-space-2xl); }
+
+.tocc-hidden { display: none !important; }
+
+@media (max-width: 767px) {
+  .tocc-hide-mobile { display: none !important; }
+}
+
+@media (min-width: 768px) {
+  .tocc-hide-desktop { display: none !important; }
+}
+
+/* Accessible screen-reader only text */
+.tocc-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================================
+   23. PRINT STYLES
+   ============================================================ */
+@media print {
+  .tocc-hero { min-height: auto; padding: 1rem 0; }
+  .tocc-hero::before { display: none; }
+  .tocc-hero__title { color: var(--tocc-black); font-size: 1.5rem; }
+  .tocc-btn { display: none; }
+  .tocc-cta-strip { display: none; }
+  .tocc-faq__answer { max-height: none; }
+}
