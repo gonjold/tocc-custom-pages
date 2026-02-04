@@ -12,361 +12,424 @@
     body { margin: 0; background: #f0f0f0; }
     .preview-label {
       font-family: 'Plus Jakarta Sans', monospace;
-      background: #1A1A1A; color: #C4A962;
+      background: #1A1A1A; color: #F05A28;
       font-size: 11px; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.15em;
       padding: 8px 20px; margin: 0;
     }
     .preview-spacer { height: 48px; background: #f0f0f0; }
+    .preview-palette {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px; padding: 24px 20px; background: #fff;
+    }
+    .preview-swatch {
+      height: 64px; border-radius: 10px; display: flex;
+      align-items: flex-end; padding: 6px 10px;
+      font-family: 'DM Sans', sans-serif; font-size: 11px;
+      color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
   </style>
 </head>
 <body>
 
 <!-- ============================================================
-     COMPONENT PREVIEW PAGE
-     No emojis — uses Font Awesome icons throughout.
+     COMPONENT PREVIEW PAGE — TROPICAL BRANDING EDITION
+     Logo-inspired: sunset orange, ocean blue, teal, palm silhouettes
+     Flag emojis approved for language references.
      ============================================================ -->
 
 <div class="tocc-page">
 
-<!-- LABEL -->
-<p class="preview-label">Component: Hero Banner (default — left-aligned)</p>
+<!-- ============================================================
+     COLOR PALETTE
+     ============================================================ -->
+<p class="preview-label">Color Palette — Logo-Derived</p>
+<div class="preview-palette">
+  <div class="preview-swatch" style="background:#EB0A1E;">Toyota Red<br>#EB0A1E</div>
+  <div class="preview-swatch" style="background:#C50818;">Red Dark<br>#C50818</div>
+  <div class="preview-swatch" style="background:#F05A28;">Sunset<br>#F05A28</div>
+  <div class="preview-swatch" style="background:#0077B6;">Ocean<br>#0077B6</div>
+  <div class="preview-swatch" style="background:#29ABE2;">Teal<br>#29ABE2</div>
+  <div class="preview-swatch" style="background:#1A1A1A;">Black<br>#1A1A1A</div>
+  <div class="preview-swatch" style="background:#2D2D2D;">Dark<br>#2D2D2D</div>
+  <div class="preview-swatch" style="background:#666666;">Gray 600<br>#666666</div>
+  <div class="preview-swatch" style="background:#F5E6C8; color: #333;">Sand<br>#F5E6C8</div>
+  <div class="preview-swatch" style="background:#F5F5F5; color: #333; border-color: #ddd;">Gray 100<br>#F5F5F5</div>
+</div>
+
 
 <!-- ============================================================
-     HERO BANNER
+     HERO BANNER — DEFAULT (LEFT-ALIGNED)
      ============================================================ -->
-<section class="tocc-hero" style="background-image: url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1600&q=80');">
-  <div class="tocc-container">
-    <div class="tocc-hero__content">
-      <span class="tocc-hero__eyebrow">Family-Owned Since 1989</span>
-      <h1 class="tocc-hero__title">Why Thousands of South Florida Drivers Choose Us</h1>
-      <p class="tocc-hero__subtitle">Transparent pricing. No-pressure experience. 200+ team members who treat you like family — not a number.</p>
-      <div class="tocc-hero__actions">
-        <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">Browse Inventory</a>
-        <a href="#" class="tocc-btn tocc-btn--secondary tocc-btn--lg">Schedule a Visit</a>
-      </div>
+<p class="preview-label">Component: Hero Banner (Default — Left-Aligned)</p>
+
+<section class="tocc-hero" style="background-image: url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1400&q=80');">
+  <div class="tocc-hero__content">
+    <span class="tocc-hero__eyebrow">Family-Owned Since 1989</span>
+    <h1 class="tocc-hero__title">Why Thousands of South Florida Drivers Choose Us</h1>
+    <p class="tocc-hero__subtitle">Transparent pricing. No-pressure experience. 200+ team members who treat you like family — not a number.</p>
+    <div class="tocc-hero__actions">
+      <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">Browse Inventory</a>
+      <a href="#" class="tocc-btn tocc-btn--secondary tocc-btn--lg">Schedule a Visit</a>
     </div>
   </div>
 </section>
 
 
+<!-- ============================================================
+     HERO BANNER — CENTERED WITH PRICE
+     ============================================================ -->
 <div class="preview-spacer"></div>
 <p class="preview-label">Component: Hero Banner — Centered with Price</p>
 
-<!-- Hero variant: centered with big price -->
-<section class="tocc-hero tocc-hero--center" style="background-image: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1600&q=80');">
-  <div class="tocc-container">
-    <div class="tocc-hero__content">
-      <span class="tocc-hero__eyebrow">Home of the</span>
-      <div class="tocc-hero__price">$35.55</div>
-      <h1 class="tocc-hero__title" style="font-size: inherit;">Full-Synthetic Oil Change</h1>
-      <p class="tocc-hero__price-note">All taxes and fees included. No coupon. Every day.</p>
-      <div class="tocc-hero__actions">
-        <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">Schedule Your Oil Change</a>
-        <a href="tel:9544487257" class="tocc-btn tocc-btn--secondary tocc-btn--lg">Call (954) 448-7257</a>
-      </div>
+<section class="tocc-hero tocc-hero--center" style="background-image: url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1400&q=80');">
+  <div class="tocc-hero__content">
+    <span class="tocc-hero__eyebrow">Home of the</span>
+    <div class="tocc-hero__price">$35.55</div>
+    <h1 class="tocc-hero__title">Full-Synthetic Oil Change</h1>
+    <p class="tocc-hero__price-note">All taxes and fees included. No coupon. Every day.</p>
+    <div class="tocc-hero__actions">
+      <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">Schedule Your Oil Change</a>
+      <a href="#" class="tocc-btn tocc-btn--secondary tocc-btn--lg">Call (954) 448-7257</a>
     </div>
   </div>
 </section>
 
-
-<div class="preview-spacer"></div>
-<p class="preview-label">Component: Hero Banner — Compact (interior pages)</p>
-
-<!-- Hero variant: compact -->
-<section class="tocc-hero tocc-hero--compact" style="background-image: url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=1600&q=80');">
-  <div class="tocc-container">
-    <div class="tocc-hero__content">
-      <span class="tocc-hero__eyebrow">Toyota of Coconut Creek</span>
-      <h1 class="tocc-hero__title">Service Center</h1>
-      <p class="tocc-hero__subtitle">30+ factory-certified technicians. Transparent pricing. Your Toyota in expert hands.</p>
-    </div>
-  </div>
-</section>
-
-
-<div class="preview-spacer"></div>
-<p class="preview-label">Component: Stats Bar (black)</p>
 
 <!-- ============================================================
-     STATS BAR
+     HERO BANNER — COMPACT (INTERIOR PAGES)
      ============================================================ -->
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Hero Banner — Compact (Interior Pages)</p>
+
+<section class="tocc-hero tocc-hero--compact" style="background-image: url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1400&q=80');">
+  <div class="tocc-hero__content">
+    <span class="tocc-hero__eyebrow">Toyota of Coconut Creek</span>
+    <h1 class="tocc-hero__title">Service Center</h1>
+    <p class="tocc-hero__subtitle">30+ factory-certified technicians. Transparent pricing. Your Toyota in expert hands.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     WAVE DIVIDER DEMO — RED INTO LIGHT
+     ============================================================ -->
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Wave Divider (Red section flowing into light)</p>
+
+<div style="background: #EB0A1E; padding: 40px 20px; text-align: center; color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;">
+  Imagine a red section above...
+</div>
+<div class="tocc-wave tocc-wave--red">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path d="M0,0 L0,60 Q360,100 720,60 T1440,60 L1440,0 Z"></path>
+  </svg>
+</div>
+
+
+<!-- ============================================================
+     STATS BAR — BLACK (DEFAULT)
+     ============================================================ -->
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Stats Bar (Black)</p>
+
 <section class="tocc-stats">
   <div class="tocc-container">
     <div class="tocc-stats__grid">
-      <div class="tocc-stats__item">
-        <div class="tocc-stats__number">35+</div>
-        <div class="tocc-stats__label">Years in Business</div>
-      </div>
-      <div class="tocc-stats__item">
-        <div class="tocc-stats__number">200+</div>
-        <div class="tocc-stats__label">Team Members</div>
-      </div>
-      <div class="tocc-stats__item">
-        <div class="tocc-stats__number">$35.55</div>
-        <div class="tocc-stats__label">Oil Change Price</div>
-      </div>
-      <div class="tocc-stats__item">
-        <div class="tocc-stats__number">4.5</div>
-        <div class="tocc-stats__label">Google Rating</div>
-      </div>
+      <div class="tocc-stats__item"><div class="tocc-stats__number">35+</div><div class="tocc-stats__label">Years in Business</div></div>
+      <div class="tocc-stats__item"><div class="tocc-stats__number">200+</div><div class="tocc-stats__label">Team Members</div></div>
+      <div class="tocc-stats__item"><div class="tocc-stats__number">$35.55</div><div class="tocc-stats__label">Oil Change Price</div></div>
+      <div class="tocc-stats__item"><div class="tocc-stats__number">4.7&#9733;</div><div class="tocc-stats__label">Google Rating</div></div>
     </div>
   </div>
 </section>
 
-
-<div class="preview-spacer"></div>
-<p class="preview-label">Component: Stats Bar (red variant)</p>
-
-<section class="tocc-stats tocc-stats--red">
-  <div class="tocc-container">
-    <div class="tocc-stats__grid">
-      <div class="tocc-stats__item">
-        <div class="tocc-stats__number">35+</div>
-        <div class="tocc-stats__label">Years in Business</div>
-      </div>
-      <div class="tocc-stats__item">
-        <div class="tocc-stats__number">200+</div>
-        <div class="tocc-stats__label">Team Members</div>
-      </div>
-      <div class="tocc-stats__item">
-        <div class="tocc-stats__number">$35.55</div>
-        <div class="tocc-stats__label">Oil Change Price</div>
-      </div>
-      <div class="tocc-stats__item">
-        <div class="tocc-stats__number">4.5</div>
-        <div class="tocc-stats__label">Google Rating</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<div class="preview-spacer"></div>
-<p class="preview-label">Component: Value Proposition Grid (light background, 3-column)</p>
 
 <!-- ============================================================
-     VALUE PROPOSITION GRID — LIGHT
+     STATS BAR — SUNSET GRADIENT (NEW)
      ============================================================ -->
-<section class="tocc-section">
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Stats Bar (Sunset Gradient — NEW)</p>
+
+<section class="tocc-stats tocc-stats--sunset">
   <div class="tocc-container">
-    <div class="tocc-section-header">
+    <div class="tocc-stats__grid">
+      <div class="tocc-stats__item"><div class="tocc-stats__number">35+</div><div class="tocc-stats__label">Years in Business</div></div>
+      <div class="tocc-stats__item"><div class="tocc-stats__number">200+</div><div class="tocc-stats__label">Team Members</div></div>
+      <div class="tocc-stats__item"><div class="tocc-stats__number">$35.55</div><div class="tocc-stats__label">Oil Change Price</div></div>
+      <div class="tocc-stats__item"><div class="tocc-stats__number">4.7&#9733;</div><div class="tocc-stats__label">Google Rating</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     STATS BAR — OCEAN (NEW)
+     ============================================================ -->
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Stats Bar (Ocean Blue — NEW)</p>
+
+<section class="tocc-stats tocc-stats--ocean">
+  <div class="tocc-container">
+    <div class="tocc-stats__grid">
+      <div class="tocc-stats__item"><div class="tocc-stats__number">35+</div><div class="tocc-stats__label">Years in Business</div></div>
+      <div class="tocc-stats__item"><div class="tocc-stats__number">200+</div><div class="tocc-stats__label">Team Members</div></div>
+      <div class="tocc-stats__item"><div class="tocc-stats__number">$35.55</div><div class="tocc-stats__label">Oil Change Price</div></div>
+      <div class="tocc-stats__item"><div class="tocc-stats__number">4.7&#9733;</div><div class="tocc-stats__label">Google Rating</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     VALUE PROPOSITION GRID (LIGHT BACKGROUND)
+     ============================================================ -->
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Value Proposition Grid (Light Background, 3-Column)</p>
+
+<section class="tocc-section tocc-section--light">
+  <div class="tocc-container">
+    <div class="tocc-section-header tocc-section-header--center">
       <span class="tocc-eyebrow">What Sets Us Apart</span>
       <h2>The Toyota of Coconut Creek Difference</h2>
-      <p>There are plenty of Toyota dealers in South Florida. Here's why over 200 families a month choose us.</p>
+      <p class="tocc-subtitle">There are plenty of Toyota dealers in South Florida. Here's why over 200 families a month choose us.</p>
     </div>
-    
     <div class="tocc-values__grid">
       <div class="tocc-value-card">
         <div class="tocc-value-card__icon"><i class="fa-solid fa-house"></i></div>
-        <h3>Family-Owned Since 1989</h3>
-        <p>Al Hendrickson Jr. and his team walk the showroom floor every day. The owner's name is on the building — and on every promise we make.</p>
+        <h3 class="tocc-value-card__title">Family-Owned Since 1989</h3>
+        <p class="tocc-value-card__text">Al Hendrickson Jr. and his team walk the showroom floor every day. The owner's name is on the building — and on every promise we make.</p>
       </div>
       <div class="tocc-value-card">
         <div class="tocc-value-card__icon"><i class="fa-solid fa-dollar-sign"></i></div>
-        <h3>$35.55 Full-Synthetic Oil Change</h3>
-        <p>Not a promotional price. Not a coupon. That's our everyday, all-in price — taxes and fees included. Try finding that anywhere else.</p>
+        <h3 class="tocc-value-card__title">$35.55 Full-Synthetic Oil Change</h3>
+        <p class="tocc-value-card__text">Not a promotional price. Not a coupon. That's our everyday, all-in price — taxes and fees included. Try finding that anywhere else.</p>
       </div>
       <div class="tocc-value-card">
         <div class="tocc-value-card__icon"><i class="fa-solid fa-handshake"></i></div>
-        <h3>No-Pressure Experience</h3>
-        <p>We don't play games. Our pricing is transparent, our salespeople are salaried, and we'd rather earn your repeat business than squeeze a deal.</p>
+        <h3 class="tocc-value-card__title">No-Pressure Experience</h3>
+        <p class="tocc-value-card__text">We don't play games. Our pricing is transparent, our salespeople are salaried, and we'd rather earn your repeat business than squeeze a deal.</p>
       </div>
       <div class="tocc-value-card">
         <div class="tocc-value-card__icon"><i class="fa-solid fa-comments"></i></div>
-        <h3>We Speak Your Language</h3>
-        <p>Our team serves you in English, Spanish, Portuguese, and Haitian Creole — in sales, service, and finance.</p>
+        <h3 class="tocc-value-card__title">We Speak Your Language</h3>
+        <p class="tocc-value-card__text">English, Spanish, Portuguese, and Haitian Creole — our team reflects the community we serve.</p>
       </div>
       <div class="tocc-value-card">
         <div class="tocc-value-card__icon"><i class="fa-solid fa-wrench"></i></div>
-        <h3>30+ Certified Technicians</h3>
-        <p>Toyota Master-certified techs with thousands of hours of training. Your vehicle gets the care it was built for.</p>
+        <h3 class="tocc-value-card__title">30+ Certified Technicians</h3>
+        <p class="tocc-value-card__text">Factory-trained, Toyota Master-certified, and equipped with genuine OEM parts. Your Toyota deserves nothing less.</p>
       </div>
       <div class="tocc-value-card">
         <div class="tocc-value-card__icon"><i class="fa-solid fa-location-dot"></i></div>
-        <h3>Right Here in Coconut Creek</h3>
-        <p>5201 W Sample Rd — easy access from Pompano Beach, Coral Springs, Boca Raton, Deerfield Beach, and all of Broward County.</p>
+        <h3 class="tocc-value-card__title">Right in Your Backyard</h3>
+        <p class="tocc-value-card__text">Conveniently located on Sample Road in Coconut Creek, just minutes from Coral Springs, Pompano Beach, and Boca Raton.</p>
       </div>
     </div>
   </div>
 </section>
 
 
-<p class="preview-label">Component: Value Proposition Grid (dark background — contrast test)</p>
-
 <!-- ============================================================
-     VALUE PROPOSITION GRID — DARK
+     VALUE PROPOSITION GRID (DARK + PALM WATERMARK)
      ============================================================ -->
-<section class="tocc-section tocc-section--dark">
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Value Grid (Dark + Palm Watermark — NEW)</p>
+
+<section class="tocc-section tocc-section--dark tocc-palm-bg">
   <div class="tocc-container">
-    <div class="tocc-section-header">
+    <div class="tocc-section-header tocc-section-header--center">
       <span class="tocc-eyebrow">What Sets Us Apart</span>
       <h2>The Toyota of Coconut Creek Difference</h2>
-      <p>Same grid on a dark section — testing contrast.</p>
+      <p class="tocc-subtitle">Same grid on a dark section with subtle palm watermark.</p>
     </div>
-    
     <div class="tocc-values__grid">
       <div class="tocc-value-card">
         <div class="tocc-value-card__icon"><i class="fa-solid fa-house"></i></div>
-        <h3>Family-Owned Since 1989</h3>
-        <p>Al Hendrickson Jr. and his team walk the showroom floor every day. The owner's name is on the building — and on every promise we make.</p>
+        <h3 class="tocc-value-card__title">Family-Owned Since 1989</h3>
+        <p class="tocc-value-card__text">Al Hendrickson Jr. and his team walk the showroom floor every day. The owner's name is on the building — and on every promise we make.</p>
       </div>
       <div class="tocc-value-card">
         <div class="tocc-value-card__icon"><i class="fa-solid fa-dollar-sign"></i></div>
-        <h3>$35.55 Full-Synthetic Oil Change</h3>
-        <p>Not a promotional price. Not a coupon. That's our everyday, all-in price — taxes and fees included.</p>
+        <h3 class="tocc-value-card__title">$35.55 Full-Synthetic Oil Change</h3>
+        <p class="tocc-value-card__text">Not a promotional price. Not a coupon. That's our everyday, all-in price — taxes and fees included.</p>
       </div>
       <div class="tocc-value-card">
         <div class="tocc-value-card__icon"><i class="fa-solid fa-handshake"></i></div>
-        <h3>No-Pressure Experience</h3>
-        <p>We don't play games. Our pricing is transparent, our salespeople are salaried, and we'd rather earn your repeat business than squeeze a deal.</p>
+        <h3 class="tocc-value-card__title">No-Pressure Experience</h3>
+        <p class="tocc-value-card__text">We don't play games. Our pricing is transparent, our salespeople are salaried, and we'd rather earn your repeat business than squeeze a deal.</p>
       </div>
     </div>
   </div>
 </section>
 
 
+<!-- ============================================================
+     WAVE — DARK INTO OCEAN SECTION
+     ============================================================ -->
+<div class="tocc-wave tocc-wave--dark">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path d="M0,0 L0,60 Q360,100 720,60 T1440,60 L1440,0 Z"></path>
+  </svg>
+</div>
+
+
+<!-- ============================================================
+     OCEAN SECTION (NEW)
+     ============================================================ -->
+<p class="preview-label">Component: Ocean Section — Logo-Inspired (NEW)</p>
+
+<section class="tocc-section tocc-section--ocean tocc-palm-bg tocc-palm-bg--left">
+  <div class="tocc-container">
+    <div class="tocc-section-header tocc-section-header--center">
+      <span class="tocc-eyebrow">Built for South Florida</span>
+      <h2>Service That Runs Deep</h2>
+      <p class="tocc-subtitle">From our roots in Coconut Creek to every neighborhood in Broward County, we're your local Toyota experts.</p>
+    </div>
+    <div class="tocc-hero__actions" style="justify-content: center;">
+      <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">Schedule Service</a>
+      <a href="#" class="tocc-btn tocc-btn--secondary tocc-btn--lg">Call Us Today</a>
+    </div>
+  </div>
+</section>
+
+<div class="tocc-wave tocc-wave--ocean">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path d="M0,0 L0,60 Q360,100 720,60 T1440,60 L1440,0 Z"></path>
+  </svg>
+</div>
+
+
+<!-- ============================================================
+     SUNSET GRADIENT SECTION (NEW)
+     ============================================================ -->
 <div class="preview-spacer"></div>
-<p class="preview-label">Component: Content Block (alternating image + text)</p>
+<p class="preview-label">Component: Sunset Gradient Section — Logo-Inspired (NEW)</p>
+
+<section class="tocc-section tocc-section--sunset tocc-palm-bg">
+  <div class="tocc-container">
+    <div class="tocc-section-header tocc-section-header--center">
+      <span class="tocc-eyebrow">Ready to Experience the Difference?</span>
+      <h2>Your Next Toyota is Waiting</h2>
+      <p class="tocc-subtitle">Transparent pricing, no-pressure experience, and a team that treats you like family. Come see for yourself.</p>
+    </div>
+    <div class="tocc-hero__actions" style="justify-content: center;">
+      <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">Browse Inventory</a>
+      <a href="#" class="tocc-btn tocc-btn--secondary tocc-btn--lg">Schedule a Visit</a>
+    </div>
+  </div>
+</section>
+
+<div class="tocc-wave tocc-wave--sunset">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path d="M0,0 L0,60 Q360,100 720,60 T1440,60 L1440,0 Z"></path>
+  </svg>
+</div>
+
 
 <!-- ============================================================
      CONTENT BLOCKS
      ============================================================ -->
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Content Block (Alternating Image + Text)</p>
+
 <section class="tocc-section tocc-section--light">
   <div class="tocc-container">
-    
-    <!-- Block 1: image right -->
-    <div class="tocc-content-block tocc-mb-2xl">
-      <div class="tocc-content-block__text">
-        <span class="tocc-eyebrow">No-Hassle Shopping</span>
-        <h2>Car Buying Without the Games</h2>
-        <p>Toyota of Coconut Creek takes a different approach. Our sales team is here to help you find the right vehicle — not pressure you into the wrong one. We post our best price upfront, offer transparent financing options, and respect your time.</p>
-        <p>That's why customers drive past three other Toyota dealers to get to us.</p>
-        <a href="#" class="tocc-btn tocc-btn--ghost">Learn about our process</a>
-      </div>
+    <div class="tocc-content-block">
       <div class="tocc-content-block__image">
-        <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80" alt="Customer and salesperson shaking hands at Toyota of Coconut Creek">
+        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80" alt="Toyota vehicle at dealership">
+      </div>
+      <div class="tocc-content-block__text">
+        <span class="tocc-eyebrow">No-Pressure Sales</span>
+        <h2>Buy a Car the Way It Should Be</h2>
+        <p>At Toyota of Coconut Creek, we believe buying a car should be straightforward, transparent, and — dare we say — enjoyable. Our sales team is salaried, so there's no pressure, no games, and no hidden fees.</p>
+        <a href="#" class="tocc-btn tocc-btn--ghost">Learn about our process &rarr;</a>
       </div>
     </div>
-    
-    <!-- Block 2: image left (reversed) -->
     <div class="tocc-content-block tocc-content-block--reverse">
+      <div class="tocc-content-block__image">
+        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80" alt="Technician working on Toyota">
+      </div>
       <div class="tocc-content-block__text">
         <span class="tocc-eyebrow">Service You Can Trust</span>
         <h2>30+ Factory-Certified Technicians</h2>
         <p>Your Toyota was engineered to exacting standards. Shouldn't your service team meet those same standards? Our technicians are Toyota Master-certified, use genuine OEM parts, and have access to the latest diagnostic equipment.</p>
-        <a href="#" class="tocc-btn tocc-btn--ghost">Explore our service center</a>
-      </div>
-      <div class="tocc-content-block__image">
-        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80" alt="Toyota service technician performing maintenance at Coconut Creek dealership">
+        <a href="#" class="tocc-btn tocc-btn--ghost">Explore our service center &rarr;</a>
       </div>
     </div>
-
   </div>
 </section>
 
-
-<p class="preview-label">Component: CTA Strip (red)</p>
 
 <!-- ============================================================
-     CTA STRIPS
+     CTA STRIPS — ALL VARIANTS
      ============================================================ -->
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: CTA Strip (Red — Default)</p>
 <section class="tocc-cta-strip">
-  <div class="tocc-container">
-    <div class="tocc-cta-strip__inner">
-      <p class="tocc-cta-strip__text">Ready to see the difference? Schedule a test drive today.</p>
-      <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">Schedule Test Drive</a>
-    </div>
-  </div>
+  <div class="tocc-container"><div class="tocc-cta-strip__inner">
+    <p class="tocc-cta-strip__text">Ready to see the difference? Schedule a test drive today.</p>
+    <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">Schedule Now</a>
+  </div></div>
 </section>
 
-
 <div class="preview-spacer"></div>
-<p class="preview-label">Component: CTA Strip (dark)</p>
-
+<p class="preview-label">Component: CTA Strip (Dark)</p>
 <section class="tocc-cta-strip tocc-cta-strip--dark">
-  <div class="tocc-container">
-    <div class="tocc-cta-strip__inner">
-      <p class="tocc-cta-strip__text">Still skeptical about $35.55? Call us — we'll confirm in under 2 minutes.</p>
-      <a href="tel:9544487257" class="tocc-btn tocc-btn--primary tocc-btn--lg">Call (954) 448-7257</a>
-    </div>
-  </div>
+  <div class="tocc-container"><div class="tocc-cta-strip__inner">
+    <p class="tocc-cta-strip__text">Still skeptical about $35.55? Call us — we'll confirm in under 2 minutes.</p>
+    <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">Call (954) 448-7257</a>
+  </div></div>
 </section>
 
-
 <div class="preview-spacer"></div>
-<p class="preview-label">Component: CTA Strip (gold)</p>
-
-<section class="tocc-cta-strip tocc-cta-strip--gold">
-  <div class="tocc-container">
-    <div class="tocc-cta-strip__inner">
-      <p class="tocc-cta-strip__text">Find out what your vehicle is worth in under 60 seconds.</p>
-      <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">Value My Trade</a>
-    </div>
-  </div>
+<p class="preview-label">Component: CTA Strip (Sunset Gradient — NEW)</p>
+<section class="tocc-cta-strip tocc-cta-strip--sunset">
+  <div class="tocc-container"><div class="tocc-cta-strip__inner">
+    <p class="tocc-cta-strip__text">Trade in your vehicle — find out what it's worth in 60 seconds.</p>
+    <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">Value My Trade</a>
+  </div></div>
 </section>
 
-
 <div class="preview-spacer"></div>
-<p class="preview-label">Component: Comparison Table</p>
+<p class="preview-label">Component: CTA Strip (Ocean Blue — NEW)</p>
+<section class="tocc-cta-strip tocc-cta-strip--ocean">
+  <div class="tocc-container"><div class="tocc-cta-strip__inner">
+    <p class="tocc-cta-strip__text">Need service? We'll get you in and out — often same day.</p>
+    <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">Schedule Service</a>
+  </div></div>
+</section>
+
 
 <!-- ============================================================
      COMPARISON TABLE
      ============================================================ -->
-<section class="tocc-section">
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Comparison Table</p>
+
+<section class="tocc-section tocc-section--light">
   <div class="tocc-container">
-    <div class="tocc-section-header">
+    <div class="tocc-section-header tocc-section-header--center">
       <span class="tocc-eyebrow">See the Difference</span>
       <h2>How We Compare</h2>
     </div>
-    
-    <div class="tocc-table-wrap">
-      <table class="tocc-table">
+    <div class="tocc-comparison">
+      <table class="tocc-comparison__table">
         <thead>
           <tr>
-            <th>Feature</th>
-            <th class="tocc-table__highlight">Toyota of Coconut Creek</th>
-            <th>Quick Lube Chain</th>
-            <th>Independent Shop</th>
+            <th></th>
+            <th class="tocc-comparison__highlight">Toyota of Coconut Creek</th>
+            <th>Other Dealers</th>
+            <th>Independent Shops</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Full-Synthetic Oil Change</td>
-            <td class="tocc-table__highlight"><strong>$35.55 all-in</strong></td>
-            <td>$60 - $90</td>
-            <td>$50 - $75</td>
-          </tr>
-          <tr>
-            <td>Toyota-Certified Technicians</td>
-            <td class="tocc-table__highlight"><span class="tocc-check"></span></td>
-            <td><span class="tocc-x"></span></td>
-            <td><span class="tocc-x"></span></td>
-          </tr>
-          <tr>
-            <td>Genuine OEM Parts</td>
-            <td class="tocc-table__highlight"><span class="tocc-check"></span></td>
-            <td><span class="tocc-x"></span></td>
-            <td>Sometimes</td>
-          </tr>
-          <tr>
-            <td>Free Multi-Point Inspection</td>
-            <td class="tocc-table__highlight"><span class="tocc-check"></span></td>
-            <td><span class="tocc-x"></span></td>
-            <td><span class="tocc-x"></span></td>
-          </tr>
-          <tr>
-            <td>Complimentary Car Wash</td>
-            <td class="tocc-table__highlight"><span class="tocc-check"></span></td>
-            <td><span class="tocc-x"></span></td>
-            <td><span class="tocc-x"></span></td>
-          </tr>
-          <tr>
-            <td>Service Price Match</td>
-            <td class="tocc-table__highlight"><span class="tocc-check"></span></td>
-            <td><span class="tocc-x"></span></td>
-            <td><span class="tocc-x"></span></td>
-          </tr>
+          <tr><td>Full-Synthetic Oil Change</td><td class="tocc-comparison__highlight">$35.55</td><td>$69–89</td><td>$55–75</td></tr>
+          <tr><td>Factory-Certified Techs</td><td class="tocc-comparison__highlight"><span class="tocc-check">&#10004;</span></td><td><span class="tocc-check">&#10004;</span></td><td><span class="tocc-x">&#10008;</span></td></tr>
+          <tr><td>Genuine OEM Parts</td><td class="tocc-comparison__highlight"><span class="tocc-check">&#10004;</span></td><td><span class="tocc-check">&#10004;</span></td><td><span class="tocc-x">&#10008;</span></td></tr>
+          <tr><td>Service Price Match</td><td class="tocc-comparison__highlight"><span class="tocc-check">&#10004;</span></td><td><span class="tocc-x">&#10008;</span></td><td><span class="tocc-x">&#10008;</span></td></tr>
+          <tr><td>Complimentary Car Wash</td><td class="tocc-comparison__highlight"><span class="tocc-check">&#10004;</span></td><td><span class="tocc-x">&#10008;</span></td><td><span class="tocc-x">&#10008;</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -374,514 +437,346 @@
 </section>
 
 
-<p class="preview-label">Component: Process Steps</p>
-
 <!-- ============================================================
      PROCESS STEPS
      ============================================================ -->
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Process Steps</p>
+
 <section class="tocc-section tocc-section--light">
   <div class="tocc-container">
-    <div class="tocc-section-header">
+    <div class="tocc-section-header tocc-section-header--center">
       <span class="tocc-eyebrow">Easy as 1-2-3</span>
       <h2>How Financing Works</h2>
     </div>
-    
-    <div class="tocc-steps__grid">
-      <div class="tocc-step">
-        <div class="tocc-step__number">1</div>
-        <h3>Apply Online</h3>
-        <p>Fill out our secure credit application in under 2 minutes. No obligation, no impact on your credit score.</p>
+    <div class="tocc-process">
+      <div class="tocc-process__step">
+        <div class="tocc-process__number">1</div>
+        <h3 class="tocc-process__title">Apply Online</h3>
+        <p class="tocc-process__text">Fill out our secure credit application in under 2 minutes. No obligation, no impact on your credit score.</p>
       </div>
-      <div class="tocc-step">
-        <div class="tocc-step__number">2</div>
-        <h3>Get Matched</h3>
-        <p>We work with 20+ lenders to find you the best rate for your situation — all credit types welcome.</p>
+      <div class="tocc-process__step">
+        <div class="tocc-process__number">2</div>
+        <h3 class="tocc-process__title">Get Matched</h3>
+        <p class="tocc-process__text">We work with 20+ lenders to find you the best rate for your situation — all credit types welcome.</p>
       </div>
-      <div class="tocc-step">
-        <div class="tocc-step__number">3</div>
-        <h3>Drive Home</h3>
-        <p>Sign your paperwork, grab your keys, and hit the road. Many customers drive home the same day.</p>
+      <div class="tocc-process__step">
+        <div class="tocc-process__number">3</div>
+        <h3 class="tocc-process__title">Drive Home</h3>
+        <p class="tocc-process__text">Sign your paperwork, grab your keys, and hit the road. Many customers drive home the same day.</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<p class="preview-label">Component: FAQ Accordion</p>
 
 <!-- ============================================================
      FAQ ACCORDION
      ============================================================ -->
-<section class="tocc-section">
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: FAQ Accordion</p>
+
+<section class="tocc-section tocc-section--light">
   <div class="tocc-container">
-    <div class="tocc-section-header">
+    <div class="tocc-section-header tocc-section-header--center">
       <span class="tocc-eyebrow">Common Questions</span>
       <h2>Frequently Asked Questions</h2>
     </div>
-    
     <div class="tocc-faq__list">
-      <div class="tocc-faq__item">
-        <button class="tocc-faq__question">
-          <span>Is $35.55 really the total price for an oil change?</span>
-          <span class="tocc-faq__icon"></span>
-        </button>
-        <div class="tocc-faq__answer">
-          <div class="tocc-faq__answer-inner">
-            <p>Yes. $35.55 is the complete, out-the-door price for a full-synthetic oil and filter change at Toyota of Coconut Creek. All taxes and shop fees are included. No coupon required. This is our everyday price — not a promotion.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="tocc-faq__item">
-        <button class="tocc-faq__question">
-          <span>Do I need an appointment for service?</span>
-          <span class="tocc-faq__icon"></span>
-        </button>
-        <div class="tocc-faq__answer">
-          <div class="tocc-faq__answer-inner">
-            <p>Appointments are recommended but not required. Walk-ins are always welcome, though scheduling ahead helps us get you in and out faster. You can book online in about 30 seconds.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="tocc-faq__item">
-        <button class="tocc-faq__question">
-          <span>Can I get financing if I have bad credit?</span>
-          <span class="tocc-faq__icon"></span>
-        </button>
-        <div class="tocc-faq__answer">
-          <div class="tocc-faq__answer-inner">
-            <p>Toyota of Coconut Creek works with all credit situations. We partner with over 20 lenders, including Toyota Financial Services, Capital One, and local credit unions, to find options for every buyer. Apply online with no obligation and no impact on your credit score.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="tocc-faq__item">
-        <button class="tocc-faq__question">
-          <span>Where is Toyota of Coconut Creek located?</span>
-          <span class="tocc-faq__icon"></span>
-        </button>
-        <div class="tocc-faq__answer">
-          <div class="tocc-faq__answer-inner">
-            <p>We're located at 5201 W Sample Rd, Coconut Creek, FL 33073 — right off the Sawgrass Expressway. We're easily accessible from Pompano Beach, Coral Springs, Boca Raton, Deerfield Beach, Margate, and Parkland.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="tocc-faq__item">
-        <button class="tocc-faq__question">
-          <span>Do you have Spanish-speaking staff?</span>
-          <span class="tocc-faq__icon"></span>
-        </button>
-        <div class="tocc-faq__answer">
-          <div class="tocc-faq__answer-inner">
-            <p>Yes. We have team members who are fluent in Spanish, Portuguese, and Haitian Creole — in our sales, service, and finance departments. You can shop, finance, and service your vehicle in the language you're most comfortable with.</p>
-          </div>
-        </div>
-      </div>
+      <details class="tocc-faq__item">
+        <summary class="tocc-faq__question">Is $35.55 really the full price for an oil change?</summary>
+        <div class="tocc-faq__answer"><p>Yes — $35.55 is our everyday, all-in price for a full-synthetic oil change. That includes up to 5 quarts of full-synthetic oil, a genuine Toyota oil filter, a multi-point inspection, and all taxes and fees. No coupon required.</p></div>
+      </details>
+      <details class="tocc-faq__item">
+        <summary class="tocc-faq__question">Do I need an appointment for service?</summary>
+        <div class="tocc-faq__answer"><p>We accept walk-ins, but scheduling an appointment helps us get you in and out faster. You can book online or call us at (954) 448-7257.</p></div>
+      </details>
+      <details class="tocc-faq__item">
+        <summary class="tocc-faq__question">Can I get financing if I have bad credit?</summary>
+        <div class="tocc-faq__answer"><p>Yes. We work with 20+ lenders and specialize in all credit situations.</p></div>
+      </details>
+      <details class="tocc-faq__item">
+        <summary class="tocc-faq__question">Where is Toyota of Coconut Creek located?</summary>
+        <div class="tocc-faq__answer"><p>We're at 5201 W Sample Rd, Coconut Creek, FL 33073 — right on Sample Road, minutes from Coral Springs, Pompano Beach, and Boca Raton.</p></div>
+      </details>
+      <details class="tocc-faq__item">
+        <summary class="tocc-faq__question">Do you have Spanish-speaking staff?</summary>
+        <div class="tocc-faq__answer"><p>Absolutely. Our team speaks English, Spanish, Portuguese, and Haitian Creole.</p></div>
+      </details>
     </div>
   </div>
 </section>
 
 
-<p class="preview-label">Component: Testimonials (3-column)</p>
-
 <!-- ============================================================
-     TESTIMONIALS
+     TESTIMONIALS ON DARK
      ============================================================ -->
-<section class="tocc-section tocc-section--light">
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Testimonials (3-Column)</p>
+
+<section class="tocc-section tocc-section--dark">
   <div class="tocc-container">
-    <div class="tocc-section-header">
+    <div class="tocc-section-header tocc-section-header--center">
       <span class="tocc-eyebrow">What Our Customers Say</span>
       <h2>Real Reviews From Real Drivers</h2>
     </div>
-    
-    <div class="tocc-testimonials__grid">
-      <div class="tocc-testimonial">
-        <div class="tocc-testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="tocc-testimonial__quote">"I drove past two other Toyota dealers to get here. No pressure, fair price, and they actually treated me like a person. I've been coming back for 8 years now."</p>
-        <div class="tocc-testimonial__author">Maria G.</div>
-        <div class="tocc-testimonial__source">Google Review</div>
+    <div class="tocc-testimonials">
+      <div class="tocc-testimonial-card">
+        <div class="tocc-testimonial-card__stars" style="color: #F59E0B;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tocc-testimonial-card__quote">"Best dealership experience I've ever had. No pressure, fair pricing, and they actually listened to what I needed."</p>
+        <div class="tocc-testimonial-card__author">Maria G.</div>
+        <div class="tocc-testimonial-card__source">Google Review</div>
       </div>
-      
-      <div class="tocc-testimonial">
-        <div class="tocc-testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="tocc-testimonial__quote">"$35.55 for a full synthetic oil change — I thought it was a typo. Nope, that's the real price. Been bringing both my cars here ever since I found out."</p>
-        <div class="tocc-testimonial__author">David R.</div>
-        <div class="tocc-testimonial__source">Google Review</div>
+      <div class="tocc-testimonial-card">
+        <div class="tocc-testimonial-card__stars" style="color: #F59E0B;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tocc-testimonial-card__quote">"The $35.55 oil change is legit. No games, no upsell. I've been coming here for 8 years."</p>
+        <div class="tocc-testimonial-card__author">James R.</div>
+        <div class="tocc-testimonial-card__source">Google Review</div>
       </div>
-      
-      <div class="tocc-testimonial">
-        <div class="tocc-testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="tocc-testimonial__quote">"Me atendieron en espanol desde que llegue. Muy profesionales y el precio fue exactamente lo que me dijeron. Recomendado 100%."</p>
-        <div class="tocc-testimonial__author">Carlos M.</div>
-        <div class="tocc-testimonial__source">Google Review</div>
+      <div class="tocc-testimonial-card">
+        <div class="tocc-testimonial-card__stars" style="color: #F59E0B;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tocc-testimonial-card__quote">"Mi familia ha comprado tres carros aqu&iacute;. El personal habla espa&ntilde;ol y siempre nos tratan con respeto."</p>
+        <div class="tocc-testimonial-card__author">Carlos M.</div>
+        <div class="tocc-testimonial-card__source">Google Review</div>
       </div>
     </div>
   </div>
 </section>
 
-
-<p class="preview-label">Component: Staff / Leadership Cards</p>
 
 <!-- ============================================================
      STAFF / LEADERSHIP CARDS
      ============================================================ -->
-<section class="tocc-section">
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Staff / Leadership Cards</p>
+
+<section class="tocc-section tocc-section--light">
   <div class="tocc-container">
-    <div class="tocc-section-header">
+    <div class="tocc-section-header tocc-section-header--center">
       <span class="tocc-eyebrow">Meet Our Leadership</span>
       <h2>The People Behind the Promise</h2>
     </div>
-    
-    <div class="tocc-staff__grid">
-      <div class="tocc-staff-card tocc-staff-card--leader">
-        <img class="tocc-staff-card__photo" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80" alt="General Manager at Toyota of Coconut Creek">
-        <div class="tocc-staff-card__info">
-          <div class="tocc-staff-card__name">John Smith</div>
-          <div class="tocc-staff-card__title">General Manager</div>
-          <div class="tocc-staff-card__tenure">With us since 2005</div>
-          <p class="tocc-staff-card__bio">20+ years of automotive leadership. John's open-door policy means any customer can speak directly with the GM — no appointment needed.</p>
-          <div class="tocc-staff-card__lang">
-            <span class="tocc-lang-badge">English</span>
-            <span class="tocc-lang-badge">Spanish</span>
-          </div>
-          <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--sm tocc-mt-lg">Talk to John</a>
-        </div>
+    <div class="tocc-staff-grid">
+      <div class="tocc-staff-card">
+        <div class="tocc-staff-card__photo"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="John Smith"></div>
+        <h3 class="tocc-staff-card__name">John Smith</h3>
+        <p class="tocc-staff-card__title">General Manager</p>
+        <p class="tocc-staff-card__tenure">With us since 2005</p>
       </div>
-      
-      <div class="tocc-staff-card tocc-staff-card--leader">
-        <img class="tocc-staff-card__photo" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&q=80" alt="Service Director at Toyota of Coconut Creek">
-        <div class="tocc-staff-card__info">
-          <div class="tocc-staff-card__name">Mike Johnson</div>
-          <div class="tocc-staff-card__title">Service Director</div>
-          <div class="tocc-staff-card__tenure">With us since 1998</div>
-          <p class="tocc-staff-card__bio">Toyota Master Diagnostic Technician turned Service Director. If you have a question about your vehicle, Mike has the answer.</p>
-          <div class="tocc-staff-card__lang">
-            <span class="tocc-lang-badge">English</span>
-          </div>
-          <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--sm tocc-mt-lg">Talk to Mike</a>
-        </div>
+      <div class="tocc-staff-card">
+        <div class="tocc-staff-card__photo"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Mike Johnson"></div>
+        <h3 class="tocc-staff-card__name">Mike Johnson</h3>
+        <p class="tocc-staff-card__title">Service Director</p>
+        <p class="tocc-staff-card__tenure">With us since 1998</p>
       </div>
-      
-      <div class="tocc-staff-card tocc-staff-card--leader">
-        <img class="tocc-staff-card__photo" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&q=80" alt="Finance Director at Toyota of Coconut Creek">
-        <div class="tocc-staff-card__info">
-          <div class="tocc-staff-card__name">Sarah Williams</div>
-          <div class="tocc-staff-card__title">Finance Director</div>
-          <div class="tocc-staff-card__tenure">With us since 2010</div>
-          <p class="tocc-staff-card__bio">15 years of matching buyers with the right financing. Sarah works with 20+ lenders to find options for every credit situation.</p>
-          <div class="tocc-staff-card__lang">
-            <span class="tocc-lang-badge">English</span>
-            <span class="tocc-lang-badge">Portuguese</span>
-          </div>
-          <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--sm tocc-mt-lg">Talk to Sarah</a>
-        </div>
+      <div class="tocc-staff-card">
+        <div class="tocc-staff-card__photo"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Sarah Williams"></div>
+        <h3 class="tocc-staff-card__name">Sarah Williams</h3>
+        <p class="tocc-staff-card__title">Finance Director</p>
+        <p class="tocc-staff-card__tenure">With us since 2010</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<p class="preview-label">Component: Pricing / Service Cards</p>
 
 <!-- ============================================================
      PRICING / SERVICE CARDS
      ============================================================ -->
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Pricing / Service Cards</p>
+
 <section class="tocc-section tocc-section--light">
   <div class="tocc-container">
-    <div class="tocc-section-header">
+    <div class="tocc-section-header tocc-section-header--center">
       <span class="tocc-eyebrow">Transparent Pricing</span>
       <h2>Service Menu</h2>
     </div>
-    
-    <div class="tocc-pricing__grid">
+    <div class="tocc-pricing-grid">
       <div class="tocc-pricing-card tocc-pricing-card--featured">
-        <span class="tocc-pricing-card__badge">Most Popular</span>
-        <div class="tocc-pricing-card__title">Full-Synthetic Oil Change</div>
+        <div class="tocc-pricing-card__badge">Most Popular</div>
+        <h3 class="tocc-pricing-card__name">Full-Synthetic Oil Change</h3>
         <div class="tocc-pricing-card__price">$35.55</div>
-        <div class="tocc-pricing-card__note">All-in. Every day. No coupon.</div>
+        <p class="tocc-pricing-card__note">All-in. Every day. No coupon.</p>
         <ul class="tocc-pricing-card__features">
-          <li>Full-synthetic oil (up to 5 qts)</li>
-          <li>Genuine Toyota oil filter</li>
-          <li>Multi-point inspection</li>
-          <li>All taxes &amp; fees included</li>
+          <li><span class="tocc-check">&#10004;</span> Full-synthetic oil (up to 5 qts)</li>
+          <li><span class="tocc-check">&#10004;</span> Genuine Toyota oil filter</li>
+          <li><span class="tocc-check">&#10004;</span> Multi-point inspection</li>
+          <li><span class="tocc-check">&#10004;</span> All taxes &amp; fees included</li>
         </ul>
-        <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--full">Schedule Now</a>
+        <a href="#" class="tocc-btn tocc-btn--primary">Schedule Now</a>
       </div>
-      
       <div class="tocc-pricing-card">
-        <div class="tocc-pricing-card__title">Tire Rotation</div>
+        <h3 class="tocc-pricing-card__name">Tire Rotation</h3>
         <div class="tocc-pricing-card__price">$24.95</div>
-        <div class="tocc-pricing-card__note">Keep your tires wearing evenly</div>
+        <p class="tocc-pricing-card__note">Keep your tires wearing evenly</p>
         <ul class="tocc-pricing-card__features">
-          <li>4-tire rotation</li>
-          <li>Pressure check &amp; adjust</li>
-          <li>Tread depth inspection</li>
-          <li>Visual brake check</li>
+          <li><span class="tocc-check">&#10004;</span> 4-tire rotation</li>
+          <li><span class="tocc-check">&#10004;</span> Pressure check &amp; adjust</li>
+          <li><span class="tocc-check">&#10004;</span> Tread depth inspection</li>
+          <li><span class="tocc-check">&#10004;</span> Visual brake check</li>
         </ul>
-        <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--full">Schedule Now</a>
+        <a href="#" class="tocc-btn tocc-btn--primary">Schedule Now</a>
       </div>
-      
       <div class="tocc-pricing-card">
-        <div class="tocc-pricing-card__title">Brake Inspection</div>
+        <h3 class="tocc-pricing-card__name">Brake Inspection</h3>
         <div class="tocc-pricing-card__price">FREE</div>
-        <div class="tocc-pricing-card__note">Peace of mind, no charge</div>
+        <p class="tocc-pricing-card__note">Peace of mind, no charge</p>
         <ul class="tocc-pricing-card__features">
-          <li>Front &amp; rear pad measurement</li>
-          <li>Rotor inspection</li>
-          <li>Brake fluid check</li>
-          <li>Written report provided</li>
+          <li><span class="tocc-check">&#10004;</span> Front &amp; rear pad measurement</li>
+          <li><span class="tocc-check">&#10004;</span> Rotor inspection</li>
+          <li><span class="tocc-check">&#10004;</span> Brake fluid check</li>
+          <li><span class="tocc-check">&#10004;</span> Written report provided</li>
         </ul>
-        <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--full">Schedule Now</a>
+        <a href="#" class="tocc-btn tocc-btn--primary">Schedule Now</a>
       </div>
     </div>
   </div>
 </section>
 
 
-<p class="preview-label">Component: Tabs (with Research Cards)</p>
-
 <!-- ============================================================
-     TABS
+     LANGUAGE SELECTOR (FLAG EMOJIS)
      ============================================================ -->
-<section class="tocc-section">
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Language Selector (Flag Emojis)</p>
+
+<section class="tocc-section tocc-section--light">
   <div class="tocc-container">
-    <div class="tocc-section-header">
-      <h2>Explore by Category</h2>
-    </div>
-    
-    <div class="tocc-tabs" data-tocc-tabs="models">
-      <button class="tocc-tab tocc-active">Cars</button>
-      <button class="tocc-tab">SUVs &amp; Crossovers</button>
-      <button class="tocc-tab">Trucks</button>
-      <button class="tocc-tab">Hybrids &amp; EVs</button>
-    </div>
-    
-    <div data-tocc-tab-panel="models">
-      <div class="tocc-tab-panel tocc-active">
-        <div class="tocc-research__grid">
-          <a href="#" class="tocc-research-card">
-            <img class="tocc-research-card__image" src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&q=80" alt="2026 Toyota Camry">
-            <div class="tocc-research-card__name">2026 Camry</div>
-            <div class="tocc-research-card__price">Starting at $29,495</div>
-          </a>
-          <a href="#" class="tocc-research-card">
-            <img class="tocc-research-card__image" src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&q=80" alt="2026 Toyota Corolla">
-            <div class="tocc-research-card__name">2026 Corolla</div>
-            <div class="tocc-research-card__price">Starting at $23,500</div>
-          </a>
-          <a href="#" class="tocc-research-card">
-            <img class="tocc-research-card__image" src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&q=80" alt="2025 Toyota GR86">
-            <div class="tocc-research-card__name">2025 GR86</div>
-            <div class="tocc-research-card__price">Starting at $30,300</div>
-          </a>
-          <a href="#" class="tocc-research-card">
-            <img class="tocc-research-card__image" src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&q=80" alt="2025 Toyota Prius">
-            <div class="tocc-research-card__name">2025 Prius</div>
-            <div class="tocc-research-card__price">Starting at $28,545</div>
-          </a>
-        </div>
-      </div>
-      <div class="tocc-tab-panel">
-        <p class="tocc-text-center" style="color: var(--tocc-gray-400); padding: 3rem;">SUVs &amp; Crossovers content would appear here</p>
-      </div>
-      <div class="tocc-tab-panel">
-        <p class="tocc-text-center" style="color: var(--tocc-gray-400); padding: 3rem;">Trucks content would appear here</p>
-      </div>
-      <div class="tocc-tab-panel">
-        <p class="tocc-text-center" style="color: var(--tocc-gray-400); padding: 3rem;">Hybrids &amp; EVs content would appear here</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<p class="preview-label">Component: Language Cards (dark background)</p>
-
-<!-- ============================================================
-     LANGUAGE CARDS
-     ============================================================ -->
-<section class="tocc-section tocc-section--dark">
-  <div class="tocc-container">
-    <div class="tocc-section-header">
+    <div class="tocc-section-header tocc-section-header--center">
       <span class="tocc-eyebrow">We Speak Your Language</span>
-      <h2>Shop in the Language You're Most Comfortable With</h2>
+      <h2>Serving Our Community in 4 Languages</h2>
+      <p class="tocc-subtitle">South Florida is home — and we speak the languages of the people we serve.</p>
     </div>
-    
     <div class="tocc-lang-cards">
+      <a href="#" class="tocc-lang-card">
+        <div class="tocc-lang-card__flag">&#127482;&#127480;</div>
+        <div class="tocc-lang-card__name">English</div>
+        <div class="tocc-lang-card__native">English</div>
+      </a>
       <a href="/hablamos-espanol/" class="tocc-lang-card">
-        <div class="tocc-lang-card__flag"><i class="fa-solid fa-comments"></i></div>
+        <div class="tocc-lang-card__flag">&#127466;&#127480;</div>
         <div class="tocc-lang-card__name">Spanish</div>
-        <div class="tocc-lang-card__native">Hablamos Espanol</div>
+        <div class="tocc-lang-card__native">Hablamos Espa&#241;ol</div>
       </a>
       <a href="/falamos-portugues/" class="tocc-lang-card">
-        <div class="tocc-lang-card__flag"><i class="fa-solid fa-comments"></i></div>
+        <div class="tocc-lang-card__flag">&#127463;&#127479;</div>
         <div class="tocc-lang-card__name">Portuguese</div>
-        <div class="tocc-lang-card__native">Falamos Portugues</div>
+        <div class="tocc-lang-card__native">N&#243;s Falamos Portugu&#234;s</div>
       </a>
       <a href="/nou-pale-kreyol/" class="tocc-lang-card">
-        <div class="tocc-lang-card__flag"><i class="fa-solid fa-comments"></i></div>
+        <div class="tocc-lang-card__flag">&#127469;&#127481;</div>
         <div class="tocc-lang-card__name">Haitian Creole</div>
-        <div class="tocc-lang-card__native">Nou Pale Kreyol</div>
-      </a>
-      <a href="#" class="tocc-lang-card">
-        <div class="tocc-lang-card__flag"><i class="fa-solid fa-comments"></i></div>
-        <div class="tocc-lang-card__name">English</div>
-        <div class="tocc-lang-card__native">We Speak English</div>
+        <div class="tocc-lang-card__native">Nou Pal&#232; Krey&#242;l</div>
       </a>
     </div>
   </div>
 </section>
 
 
-<div class="preview-spacer"></div>
-<p class="preview-label">Component: Contact Grid (map + info)</p>
-
 <!-- ============================================================
-     CONTACT GRID
+     CONTACT GRID ON DARK + PALM WATERMARK
      ============================================================ -->
-<section class="tocc-section">
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Contact Info Grid (Dark + Palm Watermark)</p>
+
+<section class="tocc-section tocc-section--dark tocc-palm-bg tocc-palm-bg--left">
   <div class="tocc-container">
-    <div class="tocc-section-header">
-      <span class="tocc-eyebrow">Visit Us</span>
-      <h2>Get in Touch</h2>
+    <div class="tocc-section-header tocc-section-header--center">
+      <span class="tocc-eyebrow">Get In Touch</span>
+      <h2>Visit Us Today</h2>
     </div>
-    
     <div class="tocc-contact-grid">
-      <div>
+      <div class="tocc-contact-info">
         <div class="tocc-contact-info__item">
-          <div class="tocc-contact-info__icon"><i class="fa-solid fa-location-dot"></i></div>
-          <div>
-            <div class="tocc-contact-info__label">Address</div>
-            <div class="tocc-contact-info__value">5201 W Sample Rd, Coconut Creek, FL 33073</div>
-          </div>
+          <div class="tocc-value-card__icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div><strong>Address</strong><p>5201 W Sample Rd<br>Coconut Creek, FL 33073</p></div>
         </div>
         <div class="tocc-contact-info__item">
-          <div class="tocc-contact-info__icon"><i class="fa-solid fa-phone"></i></div>
-          <div>
-            <div class="tocc-contact-info__label">Sales</div>
-            <div class="tocc-contact-info__value"><a href="tel:9544487257">(954) 448-7257</a></div>
-          </div>
-        </div>
-        <div class="tocc-contact-info__item">
-          <div class="tocc-contact-info__icon"><i class="fa-solid fa-clock"></i></div>
-          <div>
-            <div class="tocc-contact-info__label">Hours</div>
-            <div class="tocc-contact-info__value">Mon-Sat 8:30am-9pm, Sun 10am-7pm</div>
-          </div>
-        </div>
-        <div class="tocc-contact-info__item">
-          <div class="tocc-contact-info__icon"><i class="fa-solid fa-comments"></i></div>
-          <div>
-            <div class="tocc-contact-info__label">Languages</div>
-            <div class="tocc-contact-info__value">English, Spanish, Portuguese, Haitian Creole</div>
-          </div>
+          <div class="tocc-value-card__icon"><i class="fa-solid fa-phone"></i></div>
+          <div><strong>Phone</strong><p>(954) 448-7257</p></div>
         </div>
       </div>
-      <div class="tocc-map-embed">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5!2d-80.15!3d26.28!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDE2JzQ4LjAiTiA4MMKwMDknMDAuMCJX!5e0!3m2!1sen!2sus!4v1" allowfullscreen="" loading="lazy"></iframe>
+      <div class="tocc-contact-info">
+        <div class="tocc-contact-info__item">
+          <div class="tocc-value-card__icon"><i class="fa-solid fa-clock"></i></div>
+          <div><strong>Sales Hours</strong><p>Mon-Sat: 9am - 9pm<br>Sun: 10am - 7pm</p></div>
+        </div>
+        <div class="tocc-contact-info__item">
+          <div class="tocc-value-card__icon"><i class="fa-solid fa-comments"></i></div>
+          <div><strong>Languages</strong><p>English, Spanish, Portuguese, Haitian Creole</p></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 
-<p class="preview-label">Component: Checklist</p>
-
 <!-- ============================================================
-     CHECKLIST
+     SECTION CHAINING DEMO: Dark → Wave → Red Stats → Wave → Light
      ============================================================ -->
-<section class="tocc-section tocc-section--light">
-  <div class="tocc-container tocc-container--narrow">
-    <h2>What's Included</h2>
-    <ul class="tocc-checklist">
-      <li>Full-synthetic oil (up to 5 quarts)</li>
-      <li>Genuine Toyota oil filter</li>
-      <li>Complimentary multi-point inspection</li>
-      <li>Complimentary car wash</li>
-      <li>All taxes and shop fees included</li>
-      <li>No coupon required — everyday price</li>
-    </ul>
-  </div>
-</section>
+<div class="tocc-wave tocc-wave--dark">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path d="M0,0 L0,60 Q360,100 720,60 T1440,60 L1440,0 Z"></path>
+  </svg>
+</div>
 
-
-<p class="preview-label">Component: Breadcrumbs</p>
-
-<!-- ============================================================
-     BREADCRUMBS
-     ============================================================ -->
-<section class="tocc-section" style="padding-bottom: 0;">
+<section class="tocc-stats tocc-stats--red">
   <div class="tocc-container">
-    <nav class="tocc-breadcrumbs">
-      <a href="/">Home</a>
-      <span class="tocc-breadcrumbs__sep">/</span>
-      <a href="/service/">Service</a>
-      <span class="tocc-breadcrumbs__sep">/</span>
-      <span class="tocc-breadcrumbs__current">Oil Change</span>
-    </nav>
+    <div class="tocc-stats__grid">
+      <div class="tocc-stats__item"><div class="tocc-stats__number">35+</div><div class="tocc-stats__label">Years in Business</div></div>
+      <div class="tocc-stats__item"><div class="tocc-stats__number">200+</div><div class="tocc-stats__label">Team Members</div></div>
+      <div class="tocc-stats__item"><div class="tocc-stats__number">$35.55</div><div class="tocc-stats__label">Oil Change Price</div></div>
+      <div class="tocc-stats__item"><div class="tocc-stats__number">4.7&#9733;</div><div class="tocc-stats__label">Google Rating</div></div>
+    </div>
   </div>
 </section>
 
+<div class="tocc-wave tocc-wave--red">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path d="M0,0 L0,60 Q360,100 720,60 T1440,60 L1440,0 Z"></path>
+  </svg>
+</div>
 
-<p class="preview-label">Component: Buttons (all variants)</p>
 
 <!-- ============================================================
-     BUTTON SHOWCASE
+     RED SECTION (CONTRAST TEST)
      ============================================================ -->
-<section class="tocc-section">
+<div class="preview-spacer"></div>
+<p class="preview-label">Component: Red Section (Button/Link Contrast Test)</p>
+
+<section class="tocc-section tocc-section--red tocc-palm-bg">
   <div class="tocc-container">
-    <h2>Button Variants</h2>
-    <div class="tocc-btn-group tocc-mb-xl">
-      <a href="#" class="tocc-btn tocc-btn--primary">Primary Button</a>
-      <a href="#" class="tocc-btn tocc-btn--secondary">Secondary Button</a>
-      <a href="#" class="tocc-btn tocc-btn--ghost">Ghost Button</a>
+    <div class="tocc-section-header tocc-section-header--center">
+      <span class="tocc-eyebrow">Red Section Test</span>
+      <h2>Testing Buttons &amp; Links on Red</h2>
+      <p class="tocc-subtitle">All buttons and links must be visible and accessible on the red background.</p>
     </div>
-    <div class="tocc-btn-group tocc-mb-xl">
-      <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">Large Primary</a>
-      <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--sm">Small Primary</a>
-    </div>
-  </div>
-</section>
-
-
-<p class="preview-label">Component: Section — Red (testing red-on-red prevention)</p>
-
-<!-- ============================================================
-     RED SECTION
-     ============================================================ -->
-<section class="tocc-section tocc-section--red">
-  <div class="tocc-container tocc-text-center">
-    <span class="tocc-eyebrow">Limited Time</span>
-    <h2>Get 0% APR for 60 Months on Select Models</h2>
-    <p>Toyota Financial Services offers are available now. Don't miss out.</p>
-    <div class="tocc-btn-group tocc-btn-group--center tocc-mt-xl">
-      <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">View Offers</a>
-      <a href="#" class="tocc-btn tocc-btn--secondary tocc-btn--lg">Apply for Financing</a>
+    <div class="tocc-hero__actions" style="justify-content: center;">
+      <a href="#" class="tocc-btn tocc-btn--primary tocc-btn--lg">Primary Button</a>
+      <a href="#" class="tocc-btn tocc-btn--secondary tocc-btn--lg">Secondary Button</a>
     </div>
   </div>
 </section>
-
 
 <div class="preview-spacer"></div>
-<p class="preview-label">Component: Fine Print / Disclaimer</p>
-
-<!-- ============================================================
-     FINE PRINT
-     ============================================================ -->
-<section class="tocc-section" style="padding-top: 0;">
-  <div class="tocc-container">
-    <div class="tocc-fine-print">
-      *Toyota/Scion/Lexus vehicles only; no model restrictions. $35.55 out-the-door full synthetic oil and filter change; taxes and shop fees included. No coupon required. Not combinable with other offers. No cash value. For other makes, we'll try to honor the same price when possible; vehicle needing specialty oil or filters or higher-than-standard oil capacity may cost more. European brands and diesel engines excluded. Call us and we'll confirm in minutes. See dealer for complete details.
-    </div>
-  </div>
-</section>
-
 
 </div><!-- /.tocc-page -->
 
-<script src="js/tocc-pages.js"></script>
+<!-- JavaScript for FAQ accordion -->
+<script>
+document.querySelectorAll('.tocc-faq__item').forEach(item => {
+  const summary = item.querySelector('.tocc-faq__question');
+  if (summary) {
+    summary.addEventListener('click', () => {
+      const parent = summary.closest('.tocc-faq__item');
+      document.querySelectorAll('.tocc-faq__item').forEach(other => {
+        if (other !== parent) other.removeAttribute('open');
+      });
+    });
+  }
+});
+</script>
 
 </body>
 </html>
