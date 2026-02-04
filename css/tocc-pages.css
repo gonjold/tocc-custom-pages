@@ -144,8 +144,12 @@
   font-family: var(--tocc-font-heading);
   font-weight: var(--tocc-weight-bold);
   line-height: var(--tocc-leading-tight);
-  color: var(--tocc-black);
   margin: 0 0 var(--tocc-space-md) 0;
+}
+
+/* Color in :where() = zero specificity so any component class wins */
+.tocc-page :where(h1, h2, h3, h4, h5, h6) {
+  color: var(--tocc-black);
 }
 
 .tocc-page h1 { font-size: var(--tocc-text-3xl); font-weight: var(--tocc-weight-extrabold); }
@@ -165,19 +169,30 @@
 
 .tocc-page p {
   margin: 0 0 var(--tocc-space-md) 0;
-  color: var(--tocc-gray-600);
   line-height: var(--tocc-leading-normal);
 }
 
-.tocc-page a {
+.tocc-page :where(p) {
+  color: var(--tocc-gray-600);
+}
+
+.tocc-page :where(a) {
   color: var(--tocc-red);
   text-decoration: none;
+}
+
+.tocc-page :where(a):not(.tocc-btn):hover {
+  color: var(--tocc-red-dark);
+  text-decoration: underline;
+}
+
+.tocc-page a {
   transition: color var(--tocc-duration) var(--tocc-ease);
 }
 
-.tocc-page a:hover {
-  color: var(--tocc-red-dark);
-  text-decoration: underline;
+.tocc-page a.tocc-btn,
+.tocc-page a.tocc-btn:hover {
+  text-decoration: none;
 }
 
 /* ============================================================
