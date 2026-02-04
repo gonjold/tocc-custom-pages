@@ -1091,6 +1091,76 @@
 
 .tocc-x::before { content: '✗'; }
 
+/* Comparison Table */
+.tocc-comparison {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tocc-comparison__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--tocc-text-sm);
+}
+
+.tocc-comparison__table th,
+.tocc-comparison__table td {
+  padding: var(--tocc-space-md) var(--tocc-space-lg);
+  text-align: center;
+  border-bottom: 1px solid var(--tocc-gray-200);
+}
+
+.tocc-comparison__table th {
+  font-family: var(--tocc-font-heading);
+  font-weight: var(--tocc-weight-bold);
+  font-size: var(--tocc-text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding-bottom: var(--tocc-space-lg);
+  color: var(--tocc-gray-600);
+}
+
+.tocc-comparison__table td:first-child,
+.tocc-comparison__table th:first-child {
+  text-align: left;
+  font-weight: var(--tocc-weight-medium);
+}
+
+.tocc-comparison__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tocc-comparison__highlight {
+  background-color: var(--tocc-red-light, rgba(235, 10, 30, 0.04));
+  color: var(--tocc-black);
+  font-weight: var(--tocc-weight-bold);
+  position: relative;
+}
+
+.tocc-comparison__table th.tocc-comparison__highlight {
+  color: var(--tocc-red);
+  background-color: var(--tocc-red-light, rgba(235, 10, 30, 0.06));
+}
+
+/* Featured column top/bottom rounding */
+.tocc-comparison__table thead th.tocc-comparison__highlight {
+  border-radius: var(--tocc-radius-md) var(--tocc-radius-md) 0 0;
+}
+
+.tocc-comparison__table tbody tr:last-child td.tocc-comparison__highlight {
+  border-radius: 0 0 var(--tocc-radius-md) var(--tocc-radius-md);
+}
+
+@media (min-width: 768px) {
+  .tocc-comparison__table th,
+  .tocc-comparison__table td {
+    padding: var(--tocc-space-lg) var(--tocc-space-xl);
+  }
+  .tocc-comparison__table {
+    font-size: var(--tocc-text-base);
+  }
+}
+
 /* ============================================================
    11. TESTIMONIAL CARDS
    ============================================================ */
@@ -1193,8 +1263,15 @@
 .tocc-staff-card__photo {
   width: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  overflow: hidden;
   background-color: var(--tocc-gray-100);
+}
+
+.tocc-staff-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .tocc-staff-card__info {
