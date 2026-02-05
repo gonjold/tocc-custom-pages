@@ -2036,3 +2036,152 @@
   .tocc-cta-strip { display: none; }
   .tocc-faq__answer { display: block; }
 }
+/* ============================================================
+   TOCC PAGES - Bug Fix Patch (Feb 5, 2026)
+   Load AFTER tocc-pages.css
+   
+   9 fixes applied. Merge into main CSS when pushing to GitHub.
+   ============================================================ */
+
+/* --- FIX 1: Stats number/label stacking ---
+   Spans need display:block to stack vertically.
+   Without this, number and label sit side-by-side.
+   ------------------------------------------------------------ */
+.tocc-stats__number,
+.tocc-stats__label {
+  display: block;
+}
+
+/* --- FIX 2: Dark section table ---
+   Tables inside .tocc-section--dark had white/light row backgrounds.
+   ------------------------------------------------------------ */
+.tocc-section--dark .tocc-table-wrap {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.tocc-section--dark .tocc-table thead {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.tocc-section--dark .tocc-table th {
+  color: var(--tocc-white);
+}
+
+.tocc-section--dark .tocc-table td {
+  color: var(--tocc-gray-300);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.tocc-section--dark .tocc-table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.tocc-section--dark .tocc-table tbody tr:nth-child(odd) {
+  background-color: transparent;
+}
+
+.tocc-section--dark .tocc-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.tocc-section--dark .tocc-check {
+  color: var(--tocc-green);
+}
+
+/* --- FIX 3: CTA strip secondary button ---
+   On red CTA: secondary button had black text/border on red bg.
+   On dark CTA: secondary button had black text/border on dark bg.
+   ------------------------------------------------------------ */
+.tocc-cta-strip .tocc-btn--secondary {
+  color: var(--tocc-white);
+  border-color: var(--tocc-white);
+  background-color: transparent;
+}
+
+.tocc-cta-strip .tocc-btn--secondary:hover {
+  background-color: var(--tocc-white);
+  color: var(--tocc-red);
+}
+
+.tocc-cta-strip--dark .tocc-btn--secondary {
+  color: var(--tocc-white);
+  border-color: var(--tocc-white);
+}
+
+.tocc-cta-strip--dark .tocc-btn--secondary:hover {
+  background-color: var(--tocc-white);
+  color: var(--tocc-dark);
+}
+
+/* --- FIX 4: Content block button top margin ---
+   Buttons directly after paragraphs in content blocks lacked spacing.
+   ------------------------------------------------------------ */
+.tocc-content-block__text .tocc-btn {
+  margin-top: var(--tocc-space-sm);
+}
+
+/* --- FIX 5: Steps grid 4-column support ---
+   CSS had 3 columns at 768px. Tires page has 4 steps.
+   2-col at tablet, 4-col at desktop.
+   ------------------------------------------------------------ */
+@media (min-width: 768px) and (max-width: 991px) {
+  .tocc-steps__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .tocc-steps__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Fix connector line width for 4-col layout */
+@media (min-width: 992px) {
+  .tocc-step:not(:last-child)::after {
+    width: calc(100% - 72px);
+  }
+}
+
+/* --- FIX 6: FAQ icon — add the +/- indicator ---
+   The FAQ uses <details>/<summary> which works for open/close,
+   but the visual +/- icon needs the .tocc-faq__icon span.
+   Adding a CSS-only indicator using ::marker and ::after.
+   ------------------------------------------------------------ */
+.tocc-faq__item summary {
+  list-style: none;
+}
+
+.tocc-faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.tocc-faq__question::after {
+  content: '+';
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--tocc-gray-400);
+  transition: transform var(--tocc-duration) var(--tocc-ease);
+}
+
+.tocc-faq__item[open] .tocc-faq__question::after {
+  content: '\2212'; /* minus sign */
+  color: var(--tocc-red);
+}
+
+/* --- FIX 7: Fine print / disclaimer container padding ---
+   Disclaimer div needs horizontal padding when not in a container.
+   ------------------------------------------------------------ */
+.tocc-fine-print {
+  padding-left: var(--tocc-container-padding);
+  padding-right: var(--tocc-container-padding);
+  max-width: var(--tocc-container-max);
+  margin-left: auto;
+  margin-right: auto;
+}
